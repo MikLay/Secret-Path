@@ -20,9 +20,9 @@ Then, import the project into **Android Studio**.
 
 
 ## Build variants
-Use the Android Studio *Build Variants* button to choose between **production** and **staging** flavors combined with debug and release build types
+Use the Android Studio *Build Variants* button to choose between **production** and **staging** flavors combined with debug and release build types.
 
-Or use command line:
+Another option is to use the command line:
 
 - on Windows
 ```
@@ -33,7 +33,7 @@ gradlew assembleRelease
 ```
 ./gradlew assembleRelease
 ```
-Then the `.apk` file will be created at `secret-path/app/build/outputs/apk/release/`
+Then the `.apk` file will be created at `secret-path/app/build/outputs/apk/release/`.
 
 ## Generating signed APK
 From Android Studio:
@@ -54,6 +54,6 @@ This project is mantained by:
 1. Fork it
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -m 'Add some feature')
-4. Run the linter (ruby lint.rb').
+4. Run the linter (ruby lint.rb')
 5. Push your branch (git push origin my-new-feature)
 6. Create a new Pull Request
