@@ -22,7 +22,7 @@ Then, import the project into **Android Studio**. You can run the game on either
 ## Build variants
 Use the Android Studio *Build Variants* button to choose between **production** and **staging** flavors combined with debug and release build types.
 
-Another option to generate the release file is to use the command line (from Android Studio, select View > Tool Windows > Terminal)::
+Another option to generate the release file is to use the command line (from Android Studio, select View > Tool Windows > Terminal):
 
 - on Windows
 ```
