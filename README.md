@@ -33,7 +33,7 @@ This project is mantained by:
 * [Mykhailo Feduchenko](http://github.com/miklay)
 * [Mykhailo Feduchenko](http://github.com/miklay)
 * [Mykhailo Feduchenko](http://github.com/miklay)
-* [Mykhailo Feduchenko](http://github.com/miklay)
+* [Mariia Maimeskul](http://github.com/marviem)
 
 
 ## Contributing
