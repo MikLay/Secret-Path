@@ -15,14 +15,14 @@ Download the `.zip` archive with our project or clone this repository with the f
 ```bash
 git clone git@github.com:MikLay/Secret-Path.git
 ```
-Then, import the project into **Android Studio**.
+Then, import the project into **Android Studio**. You can run the game on either the emulator device or your device. To run the game on your device, build the `release.apk` (see the section below).
 
 
 
 ## Build variants
 Use the Android Studio *Build Variants* button to choose between **production** and **staging** flavors combined with debug and release build types.
 
-Another option is to use the command line:
+Another option to generate the release file is to use the command line (from Android Studio, select View > Tool Windows > Terminal)::
 
 - on Windows
 ```
@@ -33,7 +33,7 @@ gradlew assembleRelease
 ```
 ./gradlew assembleRelease
 ```
-Then the `.apk` file will be created at `secret-path/app/build/outputs/apk/release/`.
+Then the `release.apk` file will be created at `secret-path/app/build/outputs/apk/release/`. You can now run it on your decive.
 
 ## Generating signed APK
 From Android Studio:
