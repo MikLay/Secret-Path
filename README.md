@@ -1,7 +1,7 @@
 # Secret-Path
-This is a "Secret Path" application on the Android platform. The main
+This is a "Secret Path" application for the Android platform. The main
 idea of this application is to test intelligence and intuition of
-user in the game format.
+the user in the game format.
 
 The purpose of this mobile application is to create
 test for the user and interest him in the tasks that need
