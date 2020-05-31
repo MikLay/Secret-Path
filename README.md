@@ -32,7 +32,7 @@ From Android Studio:
 This project is mantained by:
 * [Mykhailo Feduchenko](http://github.com/miklay)
 * [Mykhailo Feduchenko](http://github.com/miklay)
-* [Mykhailo Feduchenko](http://github.com/miklay)
+* [Taras Kreshchenko](http://github.com/74r45)
 * [Mariia Maimeskul](http://github.com/marviem)
 
 
