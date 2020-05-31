@@ -1,28 +1,28 @@
 # Secret-Path
-This is a "Secret Path" application for the Android platform. The main
+This is "Secret Path" application for the Android platform. The main
 idea of this application is to test intelligence and intuition of
 the user in the game format.
 
 The purpose of this mobile application is to create
-test for the user and interest him in the tasks that need
-non-standard thinking.
+test for the user and interest him in tasks that need
+nonstandard thinking.
 
 This product is developed as a training project within the course
-"Industrial practice" of the National University "Kyiv-Mohyla Academy".
+"Industrial practice" of the National University of "Kyiv-Mohyla Academy".
 
 ## Installation
-Download the `.zip` archive with our project or clone this repository with the following command:
+Download `.zip` archive with our project or clone this repository with the following command:
 ```bash
 git clone git@github.com:MikLay/Secret-Path.git
 ```
-Then, import the project into **Android Studio**. You can run the game on either the emulator device or your device. To run the game on your device, build the `release.apk` (see the section below).
+Then, import the project into **Android Studio**. You can run the game on either emulator device or your device. To run the game on your device, build `release.apk` (see the section below).
 
 
 
 ## Build variants
-Use the Android Studio *Build Variants* button to choose between **production** and **staging** flavors combined with debug and release build types.
+In Android Studio use *Build Variants* button to choose between **production** and **staging** flavors combined with debug and release build types.
 
-Another option to generate the release file is to use the command line (from Android Studio, select View > Tool Windows > Terminal):
+Another option to generate the release file is to use command line (in Android Studio go to View > Tool Windows > Terminal):
 
 - on Windows
 ```
@@ -33,13 +33,13 @@ gradlew assembleRelease
 ```
 ./gradlew assembleRelease
 ```
-Then the `release.apk` file will be created at `secret-path/app/build/outputs/apk/release/`. You can now run it on your decive.
+Then the `release.apk` file will be created at `secret-path/app/build/outputs/apk/release/`. You can now run it on your device.
 
 ## Generating signed APK
 From Android Studio:
 1. ***Build*** menu
 2. ***Generate Signed APK...***
-3. Fill in the keystore information *(you only need to do this once manually and then let Android Studio remember it)*
+3. Fill in the keystore information *(you only need to do this manually once; Android Studio will remember it afterwards)*
 
 ## Maintainers
 This project is mantained by:
