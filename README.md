@@ -22,18 +22,18 @@ Then, import the project into **Android Studio**.
 ## Build variants
 Use the Android Studio *Build Variants* button to choose between **production** and **staging** flavors combined with debug and release build types
 
-Or use command line
+Or use command line:
 
-On Windows
+- on Windows
 ```
 gradlew assembleRelease
 ```
 
-On Mac/Linux
+- on Mac/Linux
 ```
 ./gradlew assembleRelease
 ```
-Then .apk file will be created at `secret-path/app/build/outputs/apk/release/`
+Then the `.apk` file will be created at `secret-path/app/build/outputs/apk/release/`
 
 ## Generating signed APK
 From Android Studio:
