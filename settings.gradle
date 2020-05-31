@@ -1,0 +1,2 @@
+rootProject.name='Secret Path'
+include ':app'
