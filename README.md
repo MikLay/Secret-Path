@@ -21,7 +21,8 @@ git clone git@github.com:MikLay/Secret-Path.git
 ## Build variants
 Use the Android Studio *Build Variants* button to choose between **production** and **staging** flavors combined with debug and release build types
 
-Or use command line.
+Or use command line
+
 On Windows
 ```
 gradlew assembleRelease
