@@ -11,10 +11,11 @@ This product is developed as a training project within the course
 "Industrial practice" of the National University "Kyiv-Mohyla Academy".
 
 ## Installation
-Clone this repository and import into **Android Studio**
+Download the `.zip` archive with our project or clone this repository with the following command:
 ```bash
 git clone git@github.com:MikLay/Secret-Path.git
 ```
+Then, import the project into **Android Studio**.
 
 
 
