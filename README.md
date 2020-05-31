@@ -21,6 +21,17 @@ git clone git@github.com:MikLay/Secret-Path.git
 ## Build variants
 Use the Android Studio *Build Variants* button to choose between **production** and **staging** flavors combined with debug and release build types
 
+Or use command line.
+On Windows
+```
+gradlew assembleRelease
+```
+
+On Mac/Linux
+```
+./gradlew assembleRelease
+```
+Then .apk file will be created at `secret-path/app/build/outputs/apk/release/`
 
 ## Generating signed APK
 From Android Studio:
