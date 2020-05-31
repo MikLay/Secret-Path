@@ -1,17 +1,17 @@
 # Secret-Path
-This is "Secret Path" application for the Android platform. The main
+This is an application called "Secret Path" for the Android platform. The main
 idea of this application is to test intelligence and intuition of
-the user in the game format.
+the user in form of a game.
 
-The purpose of this mobile application is to create
-test for the user and interest him in tasks that need
+The purpose of this mobile application is to 
+test the user and interest him in tasks that need
 nonstandard thinking.
 
 This product is developed as a training project within the course
 "Industrial practice" of the National University of "Kyiv-Mohyla Academy".
 
 ## Installation
-Download `.zip` archive with our project or clone this repository with the following command:
+Download the `.zip` archive with our project or clone this repository with the following command:
 ```bash
 git clone git@github.com:MikLay/Secret-Path.git
 ```
