@@ -31,7 +31,7 @@ From Android Studio:
 ## Maintainers
 This project is mantained by:
 * [Mykhailo Feduchenko](http://github.com/miklay)
-* [Mykhailo Feduchenko](http://github.com/miklay)
+* [Illya Kurochkin](http://github.com/illyakurochkin)
 * [Taras Kreshchenko](http://github.com/74r45)
 * [Mariia Maimeskul](http://github.com/marviem)
 
