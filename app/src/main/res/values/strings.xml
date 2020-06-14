@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Secret Path</string>
+    <string name="gameName">SECRET PATH</string>
+    <string name="playButtonText">Play</string>
+    <string name="levelButtonText">Levels</string>
+    <string name="settingsButtonText">Settings</string>
 </resources>
