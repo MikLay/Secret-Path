@@ -1,8 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PlayLevelActivity">
+
+    <FrameLayout
+        android:id="@+id/levelFragmentContainer"
+        android:layout_width="405dp"
+        android:layout_height="568dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/userInput"
+        android:layout_width="305dp"
+        android:layout_height="85dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/levelFragmentContainer"
+        app:layout_constraintVertical_bias="1.0"
+        android:hint="@string/userInputHint" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="89dp"
+        android:layout_height="81dp"
+        android:text="@string/sendUserInputButtonText"
+        android:textSize="24sp"
+        android:onClick="handleUserInput"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userInput"
+        app:layout_constraintTop_toBottomOf="@+id/levelFragmentContainer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

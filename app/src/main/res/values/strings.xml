@@ -4,4 +4,16 @@
     <string name="playButtonText">Play</string>
     <string name="levelButtonText">Levels</string>
     <string name="settingsButtonText">Settings</string>
+
+    <!-- First level -->
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="level01TextQuestion">Do you know what you play?</string>
+    <string name="userInputHint">Enter command</string>
+    <string name="sendUserInputButtonText">Send</string>
+    <string name="progressKey">progress</string>
+    <string name="levelKey">current_level</string>
+    <string name="sharedPreferancesFileName">com.example.secretpath</string>
+    <string name="level02TextQuestion">Are you ready to take of??</string>
 </resources>

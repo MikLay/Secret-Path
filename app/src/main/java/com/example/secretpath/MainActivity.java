@@ -1,6 +1,7 @@
 package com.example.secretpath;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,15 +9,28 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
-
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
+
+    private String LEVEL_KEY;
+    private String PROGRESS_KEY;
+    private SharedPreferences mPreferences;
+    private String sharedPrefFile;
+    private int progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        LEVEL_KEY = getString(R.string.levelKey);
+        PROGRESS_KEY = getString(R.string.progressKey);
+        sharedPrefFile = getString(R.string.sharedPreferancesFileName);
+
+        mPreferences = getSharedPreferences(
+                sharedPrefFile, MODE_PRIVATE);
+
+        progress = mPreferences.getInt(PROGRESS_KEY, 0);
     }
 
     public void playButtonOnClick(View view) {
@@ -35,5 +49,16 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAG, "SettingsButton clicked");
         Intent settingsIntent = new Intent(this, SettingsActivity.class);
         startActivity(settingsIntent);
+    }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences.Editor preferencesEditor = mPreferences.edit();
+        preferencesEditor.putInt(LEVEL_KEY, 0);
+        preferencesEditor.putInt(PROGRESS_KEY, progress);
+        preferencesEditor.apply();
+
     }
 }
