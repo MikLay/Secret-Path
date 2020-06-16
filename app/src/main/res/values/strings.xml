@@ -1,9 +1,13 @@
 <resources>
-    <string name="app_name">Secret Path</string>
+    <string name="appName">Secret Path</string>
     <string name="gameName">SECRET PATH</string>
     <string name="playButtonText">Play</string>
     <string name="levelButtonText">Levels</string>
     <string name="settingsButtonText">Settings</string>
+    <string name="levelsTitle">SELECT LEVEL</string>
+    <string name="levelsMenuButtonDescription">Go back to Menu</string>
+    <string name="levelsSettingsButtonDescription">Go to Settings</string>
+    <string name="levelsPlayButtonDescription">Start the level</string>
 
     <!-- First level -->
 
@@ -13,6 +17,6 @@
     <string name="sendUserInputButtonText">Send</string>
     <string name="progressKey">progress</string>
     <string name="levelKey">current_level</string>
-    <string name="sharedPreferancesFileName">com.justdoit.secretpath</string>
+    <string name="sharedPreferencesFileName">com.justdoit.secretpath</string>
     <string name="level02TextQuestion">Are you ready to take off?</string>
 </resources>

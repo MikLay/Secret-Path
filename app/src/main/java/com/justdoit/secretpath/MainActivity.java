@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         LEVEL_KEY = getString(R.string.levelKey);
         PROGRESS_KEY = getString(R.string.progressKey);
-        sharedPrefFile = getString(R.string.sharedPreferancesFileName);
+        sharedPrefFile = getString(R.string.sharedPreferencesFileName);
 
         mPreferences = getSharedPreferences(
                 sharedPrefFile, MODE_PRIVATE);
@@ -36,12 +36,14 @@ public class MainActivity extends AppCompatActivity {
     public void playButtonOnClick(View view) {
         Log.d(LOG_TAG, "PlayButton clicked");
         Intent playIntent = new Intent(this, PlayLevelActivity.class);
+        finish();
         startActivity(playIntent);
     }
 
     public void levelsButtonOnClick(View view) {
         Log.d(LOG_TAG, "LevelsButton clicked");
         Intent levelsIntent = new Intent(this, LevelsActivity.class);
+        finish();
         startActivity(levelsIntent);
     }
 
@@ -58,6 +60,5 @@ public class MainActivity extends AppCompatActivity {
         preferencesEditor.putInt(LEVEL_KEY, 0);
         preferencesEditor.putInt(PROGRESS_KEY, progress);
         preferencesEditor.apply();
-
     }
 }

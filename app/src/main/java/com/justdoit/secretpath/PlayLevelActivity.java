@@ -18,7 +18,7 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
 
     private static final String LOG_TAG =
             PlayLevelActivity.class.getSimpleName();
-    private final LevelModelFragment[] levels = {
+    protected static final LevelModelFragment[] LEVELS = {
             new SimplestLevelFragment(),
             new WifiLevelFragment()
     };
@@ -51,7 +51,7 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
     @Override
     public void levelCompleted() {
         int levelId = mPreferences.getInt(getString(R.string.levelKey), 0);
-        if (levels.length > levelId + 1) {
+        if (LEVELS.length > levelId + 1) {
             ++levelId;
             setLevel(levelId);
 
@@ -73,11 +73,11 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         if (currentLevel == null) {
             Log.d(LOG_TAG, "Set new LevelFragment");
-            currentLevel = levels[id];
+            currentLevel = LEVELS[id];
             fragmentTransaction.add(R.id.levelFragmentContainer, currentLevel);
             fragmentTransaction.commit();
         } else {
-            currentLevel = levels[id];
+            currentLevel = LEVELS[id];
             Log.d(LOG_TAG, "Set next LevelFragment");
             fragmentTransaction.replace(R.id.levelFragmentContainer, currentLevel);
             fragmentTransaction.addToBackStack(null);
