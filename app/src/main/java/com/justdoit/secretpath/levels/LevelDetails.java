@@ -1,4 +1,4 @@
-package com.example.secretpath.levels;
+package com.justdoit.secretpath.levels;
 
 public class LevelDetails {
     private final int id;

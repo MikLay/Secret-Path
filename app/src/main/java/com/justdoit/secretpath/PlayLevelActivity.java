@@ -1,4 +1,4 @@
-package com.example.secretpath;
+package com.justdoit.secretpath;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -10,9 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.secretpath.levels.LevelModelFragment;
-import com.example.secretpath.levels.SimplestLevelFragment;
-import com.example.secretpath.levels.WifeLevelFragment;
+import com.justdoit.secretpath.levels.LevelModelFragment;
+import com.justdoit.secretpath.levels.SimplestLevelFragment;
+import com.justdoit.secretpath.levels.WifiLevelFragment;
 
 public class PlayLevelActivity extends AppCompatActivity implements LevelModelFragment.ActivityCallBack {
 
@@ -20,14 +20,13 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             PlayLevelActivity.class.getSimpleName();
     private final LevelModelFragment[] levels = {
             new SimplestLevelFragment(),
-            new WifeLevelFragment()
+            new WifiLevelFragment()
     };
 
     private SharedPreferences mPreferences;
     private String sharedPrefFile =
-            "com.example.secretpath";
+            "com.justdoit.secretpath";
     private LevelModelFragment currentLevel;
-
 
     private EditText userInputEditText;
 
@@ -85,5 +84,4 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             fragmentTransaction.commit();
         }
     }
-
 }

@@ -1,4 +1,4 @@
-package com.example.secretpath.levels;
+package com.justdoit.secretpath.levels;
 
 import android.content.Context;
 import android.os.Bundle;

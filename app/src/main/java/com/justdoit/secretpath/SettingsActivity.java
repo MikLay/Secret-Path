@@ -1,4 +1,4 @@
-package com.example.secretpath;
+package com.justdoit.secretpath;
 
 import android.os.Bundle;
 

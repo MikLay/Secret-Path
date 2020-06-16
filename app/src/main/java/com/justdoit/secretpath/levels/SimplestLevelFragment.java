@@ -1,4 +1,4 @@
-package com.example.secretpath.levels;
+package com.justdoit.secretpath.levels;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.secretpath.R;
+import com.justdoit.secretpath.R;
 
 public class SimplestLevelFragment extends LevelModelFragment {
     private static final String LOG_TAG =
@@ -20,9 +20,6 @@ public class SimplestLevelFragment extends LevelModelFragment {
                 new String[]{"Enter the name of program"});
     }
 
-
-
-
     @Override
     protected View provideFragmentView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         Log.d(LOG_TAG, "Fragment rendering");
@@ -30,7 +27,6 @@ public class SimplestLevelFragment extends LevelModelFragment {
         //Now specific components here (you can initialize Buttons etc)
         return view;
     }
-
 
     @Override
     public void handleInput(String input) {

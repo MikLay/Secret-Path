@@ -1,4 +1,4 @@
-package com.example.secretpath.levels;
+package com.justdoit.secretpath.levels;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -11,15 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.secretpath.R;
+import com.justdoit.secretpath.R;
 
-public class WifeLevelFragment extends LevelModelFragment {
+public class WifiLevelFragment extends LevelModelFragment {
 
-    private WifiManager wifeManager;
+    private WifiManager wifiManager;
 
     private static final String LOG_TAG =
-            WifeLevelFragment.class.getSimpleName();
-
+            WifiLevelFragment.class.getSimpleName();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,10 +26,9 @@ public class WifeLevelFragment extends LevelModelFragment {
         levelDetails = new LevelDetails(
                 2,
                 "No connection level...",
-                new String[]{"Try to forget about network", "Is it good to be without internet connection?", "Turn off wife"});
-        wifeManager = (WifiManager) getActivity().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+                new String[]{"Try to forget about network", "Is it good to be without internet connection?", "Turn off wifi"});
+        wifiManager = (WifiManager) getActivity().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
     }
-
 
     @Override
     protected View provideFragmentView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
@@ -40,21 +38,19 @@ public class WifeLevelFragment extends LevelModelFragment {
         return view;
     }
 
-
-
     @Override
     public void onResume() {
         super.onResume();
         Log.d(LOG_TAG, "Fragment rendering");
 
         IntentFilter intentFilter = new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION);
-        getActivity().registerReceiver(wifeStateReceiver, intentFilter);
+        getActivity().registerReceiver(wifiStateReceiver, intentFilter);
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        getActivity().unregisterReceiver(wifeStateReceiver);
+        getActivity().unregisterReceiver(wifiStateReceiver);
     }
 
     @Override
@@ -62,7 +58,7 @@ public class WifeLevelFragment extends LevelModelFragment {
 
     }
 
-    private BroadcastReceiver wifeStateReceiver = new BroadcastReceiver() {
+    private BroadcastReceiver wifiStateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
 

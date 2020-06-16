@@ -1,4 +1,4 @@
-package com.example.secretpath;
+package com.justdoit.secretpath;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         Intent settingsIntent = new Intent(this, SettingsActivity.class);
         startActivity(settingsIntent);
     }
-
 
     @Override
     protected void onPause() {

@@ -1,4 +1,4 @@
-package com.example.secretpath;
+package com.justdoit.secretpath;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.example.secretpath", appContext.getPackageName());
+        assertEquals("com.justdoit.secretpath", appContext.getPackageName());
     }
 }
