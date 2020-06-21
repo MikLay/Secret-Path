@@ -30,22 +30,26 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
     private SharedPreferences mPreferences;
     private LevelModelFragment currentLevel;
     private EditText userInputEditText;
+    private int theme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mPreferences = getSharedPreferences(
+                getString(R.string.sharedPreferencesFileName), MODE_PRIVATE);
+        theme = mPreferences.getInt(getString(R.string.themeKey), 0);
+        if (theme == 1) {
+            setTheme(R.style.LightTheme);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_level);
 
         LEVEL_KEY = getString(R.string.levelKey);
         PROGRESS_KEY = getString(R.string.progressKey);
-
         userInputEditText = findViewById(R.id.userInput);
 
-        mPreferences = getSharedPreferences(
-                getString(R.string.sharedPreferencesFileName), MODE_PRIVATE);
         setLevel(mPreferences.getInt(LEVEL_KEY, 0));
     }
-
 
     public void handleUserInput(View view) {
         Log.d(LOG_TAG, "Handled user input");
@@ -105,5 +109,12 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mPreferences.getInt(getString(R.string.themeKey), 0) != theme)
+            recreate();
     }
 }

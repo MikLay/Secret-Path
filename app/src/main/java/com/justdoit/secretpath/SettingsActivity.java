@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,9 +20,6 @@ public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
-
         THEME_KEY = getString(R.string.themeKey);
         VOLUME_KEY = getString(R.string.volumeKey);
 
@@ -32,6 +28,13 @@ public class SettingsActivity extends AppCompatActivity {
 
         int theme = mPreferences.getInt(THEME_KEY, 0); // Dark theme by default
         int volume = mPreferences.getInt(VOLUME_KEY, 1); // Sounds on by default
+
+        if (theme == 1) {
+            setTheme(R.style.LightTheme);
+        }
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_settings);
 
         setThemeLayoutState(theme);
         setVolumeLayoutState(volume);
@@ -65,17 +68,19 @@ public class SettingsActivity extends AppCompatActivity {
         Log.d(LOG_TAG, "SwitchTheme toggled");
         Switch themeSwitch = findViewById(R.id.settingsThemeSwitch);
         if (themeSwitch.isChecked()) {
-            //TODO: switch to Light theme
-
             SharedPreferences.Editor preferencesEditor = mPreferences.edit();
             preferencesEditor.putInt(THEME_KEY, 1);
             preferencesEditor.apply();
-        } else {
-            //TODO: switch to Dark theme
 
+            setTheme(R.style.LightTheme);
+            recreate();
+        } else {
             SharedPreferences.Editor preferencesEditor = mPreferences.edit();
             preferencesEditor.putInt(THEME_KEY, 0);
             preferencesEditor.apply();
+
+            setTheme(R.style.AppTheme);
+            recreate();
         }
     }
 
