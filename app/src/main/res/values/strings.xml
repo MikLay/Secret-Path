@@ -1,17 +1,24 @@
 <resources>
     <string name="appName">Secret Path</string>
     <string name="gameName">SECRET PATH</string>
+    <string name="levelsTitle">SELECT LEVEL</string>
+    <string name="settingsTitle">SETTINGS</string>
     <string name="playButtonText">Play</string>
     <string name="levelButtonText">Levels</string>
     <string name="settingsButtonText">Settings</string>
-    <string name="levelsTitle">SELECT LEVEL</string>
     <string name="levelsMenuButtonDescription">Go back to Menu</string>
     <string name="levelsSettingsButtonDescription">Go to Settings</string>
     <string name="levelsPlayButtonDescription">Start the level</string>
+    <string name="settingsBackButtonDescription">Go back to Menu</string>
+    <string name="settingsSound">Sound</string>
+    <string name="settingsTheme">Color Theme</string>
+    <string name="settingsShare">Share…</string>
+    <string name="settingsSoundDescription">Toggle sounds on/off</string>
+    <string name="settingsThemeDescription">Toggle theme</string>
+    <string name="settingsShareDescription">Share</string>
 
     <!-- First level -->
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="level01TextQuestion">What are you playing right now?</string>
     <string name="userInputHint">Enter command</string>
     <string name="sendUserInputButtonText">Send</string>
