@@ -46,6 +46,17 @@
                 android:minWidth="50dp"
                 android:minHeight="50dp"
                 android:onClick="settingsButtonOnClick" />
+
+            <ImageButton
+                android:id="@+id/hintsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_hints"
+                android:contentDescription="@string/levelsSettingsButtonDescription"
+                android:minWidth="50dp"
+                android:minHeight="50dp"
+                android:onClick="hintsButtonOnClick" />
+
         </LinearLayout>
 
         <TextView

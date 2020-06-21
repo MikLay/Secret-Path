@@ -1,5 +1,6 @@
 package com.justdoit.secretpath;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -27,10 +28,13 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
 
     private String LEVEL_KEY;
     private String PROGRESS_KEY;
+    private static final String HINT_INDEX_KEY = "hint_index";
+
     private SharedPreferences mPreferences;
     private LevelModelFragment currentLevel;
     private EditText userInputEditText;
     private int theme;
+    private int hintIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +71,25 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
         Log.d(LOG_TAG, "SettingsButton clicked");
         Intent settingsIntent = new Intent(this, SettingsActivity.class);
         startActivity(settingsIntent);
+    }
+
+    public void hintsButtonOnClick(View view) {
+        Log.d(LOG_TAG, "HintsButton clicked");
+
+        String[] hints = currentLevel.getLevelDetails().getHints();
+
+        new AlertDialog.Builder(this)
+                .setTitle("Hint #" + (hintIndex + 1))
+                .setMessage(hints[hintIndex])
+                .show();
+
+        if (hintIndex < hints.length - 1) {
+            hintIndex++;
+
+            SharedPreferences.Editor preferencesEditor = mPreferences.edit();
+            preferencesEditor.putInt(HINT_INDEX_KEY + currentLevel.getId(), hintIndex);
+            preferencesEditor.apply();
+        }
     }
 
     @Override
@@ -109,6 +132,8 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }
+
+        hintIndex = mPreferences.getInt(HINT_INDEX_KEY + id, 0);
     }
 
     @Override
