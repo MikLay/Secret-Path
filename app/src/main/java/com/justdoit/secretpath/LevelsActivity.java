@@ -22,8 +22,8 @@ public class LevelsActivity extends AppCompatActivity {
 
     private SharedPreferences mPreferences;
     private int progress;
-    private TextView levelNumber;
     private int levelsTotal = PlayLevelActivity.LEVELS.length;
+    private TextView levelNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -60,13 +60,13 @@ public class WifiLevelFragment extends LevelModelFragment {
     private BroadcastReceiver wifiStateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-        final String action = intent.getAction();
-        if (action != null && action.equals(WifiManager.WIFI_STATE_CHANGED_ACTION)) {
-            if (intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, WifiManager.WIFI_STATE_UNKNOWN) == WifiManager.WIFI_STATE_DISABLED) {
-                Log.d(LOG_TAG, "Wifi is disabled!");
-                callback.levelCompleted();
+            final String action = intent.getAction();
+            if (action != null && action.equals(WifiManager.WIFI_STATE_CHANGED_ACTION)) {
+                if (intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, WifiManager.WIFI_STATE_UNKNOWN) == WifiManager.WIFI_STATE_DISABLED) {
+                    Log.d(LOG_TAG, "Wifi is disabled!");
+                    callback.levelCompleted();
+                }
             }
-        }
         }
     };
 }

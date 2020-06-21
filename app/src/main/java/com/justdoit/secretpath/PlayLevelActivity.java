@@ -23,18 +23,19 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             new WifiLevelFragment()
     };
 
-    private final String LEVEL_KEY = getString(R.string.levelKey);
-    private final String PROGRESS_KEY = getString(R.string.progressKey);
-
+    private String LEVEL_KEY;
+    private String PROGRESS_KEY;
     private SharedPreferences mPreferences;
     private LevelModelFragment currentLevel;
-
     private EditText userInputEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_level);
+
+        LEVEL_KEY = getString(R.string.levelKey);
+        PROGRESS_KEY = getString(R.string.progressKey);
 
         userInputEditText = findViewById(R.id.userInput);
 

@@ -12,9 +12,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
 
-    private final String LEVEL_KEY = getString(R.string.levelKey);
-    private final String PROGRESS_KEY = getString(R.string.progressKey);
-
+    private String LEVEL_KEY;
+    private String PROGRESS_KEY;
     private SharedPreferences mPreferences;
     private int progress;
 
@@ -22,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        LEVEL_KEY = getString(R.string.levelKey);
+        PROGRESS_KEY = getString(R.string.progressKey);
 
         mPreferences = getSharedPreferences(
                 getString(R.string.sharedPreferencesFileName), MODE_PRIVATE);
