@@ -23,9 +23,10 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             new WifiLevelFragment()
     };
 
+    private final String LEVEL_KEY = getString(R.string.levelKey);
+    private final String PROGRESS_KEY = getString(R.string.progressKey);
+
     private SharedPreferences mPreferences;
-    private String sharedPrefFile =
-            "com.justdoit.secretpath";
     private LevelModelFragment currentLevel;
 
     private EditText userInputEditText;
@@ -38,8 +39,8 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
         userInputEditText = findViewById(R.id.userInput);
 
         mPreferences = getSharedPreferences(
-                sharedPrefFile, MODE_PRIVATE);
-        setLevel(mPreferences.getInt(getString(R.string.levelKey), 0));
+                getString(R.string.sharedPreferencesFileName), MODE_PRIVATE);
+        setLevel(mPreferences.getInt(LEVEL_KEY, 0));
     }
 
 
@@ -50,17 +51,17 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
 
     @Override
     public void levelCompleted() {
-        int levelId = mPreferences.getInt(getString(R.string.levelKey), 0);
+        int levelId = mPreferences.getInt(LEVEL_KEY, 0);
         if (LEVELS.length > levelId + 1) {
             ++levelId;
             setLevel(levelId);
 
             SharedPreferences.Editor preferencesEditor = mPreferences.edit();
-            preferencesEditor.putInt(getString(R.string.levelKey), levelId);
+            preferencesEditor.putInt(LEVEL_KEY, levelId);
 
-            int progress = mPreferences.getInt(getString(R.string.progressKey), 0);
+            int progress = mPreferences.getInt(PROGRESS_KEY, 0);
             if (progress < levelId) {
-                preferencesEditor.putInt(getString(R.string.progressKey), levelId);
+                preferencesEditor.putInt(PROGRESS_KEY, levelId);
             }
             preferencesEditor.apply();
         }

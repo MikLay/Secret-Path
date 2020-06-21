@@ -20,9 +20,7 @@ public class LevelsActivity extends AppCompatActivity {
     private static final String LOG_TAG =
             LevelsActivity.class.getSimpleName();
 
-    private String PROGRESS_KEY;
     private SharedPreferences mPreferences;
-    private String sharedPrefFile;
     private int progress;
     private TextView levelNumber;
     private int levelsTotal = PlayLevelActivity.LEVELS.length;
@@ -32,13 +30,10 @@ public class LevelsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_levels);
 
-        PROGRESS_KEY = getString(R.string.progressKey);
-        sharedPrefFile = getString(R.string.sharedPreferencesFileName);
-
         mPreferences = getSharedPreferences(
-                sharedPrefFile, MODE_PRIVATE);
+                getString(R.string.sharedPreferencesFileName), MODE_PRIVATE);
 
-        progress = mPreferences.getInt(PROGRESS_KEY, 0);
+        progress = mPreferences.getInt(getString(R.string.progressKey), 0);
 
         levelNumber = findViewById(R.id.selectLevelNumber);
         levelNumber.setText(String.valueOf(progress + 1));
