@@ -24,17 +24,21 @@ public class LevelsActivity extends AppCompatActivity {
     private int progress;
     private int levelsTotal = PlayLevelActivity.LEVELS.length;
     private TextView levelNumber;
+    private int theme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mPreferences = getSharedPreferences(
+                getString(R.string.sharedPreferencesFileName), MODE_PRIVATE);
+        theme = mPreferences.getInt(getString(R.string.themeKey), 0);
+        if (theme == 1) {
+            setTheme(R.style.LightTheme);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_levels);
 
-        mPreferences = getSharedPreferences(
-                getString(R.string.sharedPreferencesFileName), MODE_PRIVATE);
-
         progress = mPreferences.getInt(getString(R.string.progressKey), 0);
-
         levelNumber = findViewById(R.id.selectLevelNumber);
         levelNumber.setText(String.valueOf(progress + 1));
     }
@@ -79,5 +83,12 @@ public class LevelsActivity extends AppCompatActivity {
         Intent playIntent = new Intent(this, PlayLevelActivity.class);
         finish();
         startActivity(playIntent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mPreferences.getInt(getString(R.string.themeKey), 0) != theme)
+            recreate();
     }
 }

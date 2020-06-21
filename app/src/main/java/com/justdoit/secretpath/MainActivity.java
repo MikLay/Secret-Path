@@ -16,18 +16,22 @@ public class MainActivity extends AppCompatActivity {
     private String PROGRESS_KEY;
     private SharedPreferences mPreferences;
     private int progress;
+    private int theme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mPreferences = getSharedPreferences(
+                getString(R.string.sharedPreferencesFileName), MODE_PRIVATE);
+        theme = mPreferences.getInt(getString(R.string.themeKey), 0);
+        if (theme == 1) {
+            setTheme(R.style.LightTheme);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         LEVEL_KEY = getString(R.string.levelKey);
         PROGRESS_KEY = getString(R.string.progressKey);
-
-        mPreferences = getSharedPreferences(
-                getString(R.string.sharedPreferencesFileName), MODE_PRIVATE);
-
         progress = mPreferences.getInt(PROGRESS_KEY, 0);
     }
 
@@ -55,5 +59,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mPreferences.getInt(getString(R.string.themeKey), 0) != theme)
+            recreate();
     }
 }

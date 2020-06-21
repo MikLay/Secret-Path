@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundDark"
+    android:background="?android:colorBackground"
     tools:context=".SettingsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,12 +19,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/settingsTitle"
-            android:textColor="#1F1578"
-            android:textSize="60sp"
-            app:fontFamily="@font/bubblegum_sans"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="40sp"
+            app:fontFamily="sans-serif-medium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintHorizontal_bias="0.8"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,13 +34,12 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:background="@drawable/ic_arrow_left"
+            app:backgroundTint="?android:textColorSecondary"
             android:contentDescription="@string/settingsBackButtonDescription"
             android:minWidth="100dp"
             android:minHeight="100dp"
             android:onClick="backButtonOnClick"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -76,7 +75,7 @@
                     android:textSize="35sp"
                     android:layout_marginBottom="15dp"
                     app:fontFamily="sans-serif-black"
-                    android:textColor="#AAAAAA" />
+                    android:textColor="?android:textColorSecondary" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -84,9 +83,11 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/settingsSoundImage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_volume_on"
+                        android:tint="?android:textColorSecondary"
                         android:contentDescription="@string/settingsSoundDescription"
                         android:minWidth="50dp"
                         android:minHeight="50dp"
@@ -94,6 +95,7 @@
                         android:layout_marginEnd="50dp" />
 
                     <Switch
+                        android:id="@+id/settingsSoundSwitch"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:switchMinWidth="70dp"
@@ -116,7 +118,7 @@
                     android:layout_marginBottom="15dp"
                     app:fontFamily="sans-serif-black"
                     android:maxLines="1"
-                    android:textColor="#AAAAAA" />
+                    android:textColor="?android:textColorSecondary" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -127,6 +129,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_theme"
+                        android:tint="?android:textColorSecondary"
                         android:contentDescription="@string/settingsThemeDescription"
                         android:minWidth="50dp"
                         android:minHeight="50dp"
@@ -134,6 +137,7 @@
                         android:layout_marginEnd="50dp" />
 
                     <Switch
+                        android:id="@+id/settingsThemeSwitch"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:switchMinWidth="70dp"
@@ -151,6 +155,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_share"
+                    android:tint="?android:textColorSecondary"
                     android:contentDescription="@string/settingsShareDescription"
                     android:minWidth="50dp"
                     android:minHeight="50dp"
@@ -164,7 +169,7 @@
                     android:text="@string/settingsShare"
                     android:textSize="35sp"
                     app:fontFamily="sans-serif-black"
-                    android:textColor="#AAAAAA" />
+                    android:textColor="?android:textColorSecondary" />
             </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

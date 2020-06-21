@@ -1,5 +1,6 @@
 package com.justdoit.secretpath;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,7 +14,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -34,13 +34,24 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             PlayLevelActivity.class.getSimpleName();
     private String LEVEL_KEY;
     private String PROGRESS_KEY;
+    private static final String HINT_INDEX_KEY = "hint_index";
+
     private SharedPreferences mPreferences;
     private LevelModelFragment currentLevel;
     private EditText userInputEditText;
+    private int theme;
+    private int hintIndex;
     private String[] wrongText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mPreferences = getSharedPreferences(
+                getString(R.string.sharedPreferencesFileName), MODE_PRIVATE);
+        theme = mPreferences.getInt(getString(R.string.themeKey), 0);
+        if (theme == 1) {
+            setTheme(R.style.LightTheme);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_level);
 
@@ -57,7 +68,6 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
         System.out.println(mPreferences.getInt(PROGRESS_KEY, 0));
         setLevel(mPreferences.getInt(LEVEL_KEY, 0));
     }
-
 
     public void handleUserInput(View view) {
         Log.d(LOG_TAG, "Handled user input");
@@ -76,6 +86,25 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
         Log.d(LOG_TAG, "SettingsButton clicked");
         Intent settingsIntent = new Intent(this, SettingsActivity.class);
         startActivity(settingsIntent);
+    }
+
+    public void hintsButtonOnClick(View view) {
+        Log.d(LOG_TAG, "HintsButton clicked");
+
+        String[] hints = currentLevel.getLevelDetails().getHints();
+
+        new AlertDialog.Builder(this)
+                .setTitle("Hint #" + (hintIndex + 1))
+                .setMessage(hints[hintIndex])
+                .show();
+
+        if (hintIndex < hints.length - 1) {
+            hintIndex++;
+
+            SharedPreferences.Editor preferencesEditor = mPreferences.edit();
+            preferencesEditor.putInt(HINT_INDEX_KEY + currentLevel.getId(), hintIndex);
+            preferencesEditor.apply();
+        }
     }
 
     @Override
@@ -154,5 +183,14 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             fragmentTransaction.commit();
             userInputEditText.setText("");
         }
+
+        hintIndex = mPreferences.getInt(HINT_INDEX_KEY + id, 0);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mPreferences.getInt(getString(R.string.themeKey), 0) != theme)
+            recreate();
     }
 }

@@ -1,18 +1,18 @@
 <resources>
     <string name="appName">Secret Path</string>
     <string name="gameName">SECRET PATH</string>
-    <string name="levelsTitle">SELECT LEVEL</string>
-    <string name="settingsTitle">SETTINGS</string>
-    <string name="playButtonText">Play</string>
-    <string name="levelButtonText">Levels</string>
-    <string name="settingsButtonText">Settings</string>
+    <string name="levelsTitle">Рівні</string>
+    <string name="settingsTitle">Налаштування</string>
+    <string name="playButtonText">Грати</string>
+    <string name="levelButtonText">Рівні</string>
+    <string name="settingsButtonText">Налаштування</string>
     <string name="levelsMenuButtonDescription">Go back to Menu</string>
     <string name="levelsSettingsButtonDescription">Go to Settings</string>
     <string name="levelsPlayButtonDescription">Start the level</string>
     <string name="settingsBackButtonDescription">Go back to Menu</string>
-    <string name="settingsSound">Sound</string>
-    <string name="settingsTheme">Color Theme</string>
-    <string name="settingsShare">Share…</string>
+    <string name="settingsSound">Звук</string>
+    <string name="settingsTheme">Тема</string>
+    <string name="settingsShare">Поділитися…</string>
     <string name="settingsSoundDescription">Toggle sounds on/off</string>
     <string name="settingsThemeDescription">Toggle theme</string>
     <string name="settingsShareDescription">Share</string>
@@ -24,6 +24,8 @@
     <string name="sendUserInputButtonText">Send</string>
     <string name="progressKey">progress</string>
     <string name="levelKey">current_level</string>
+    <string name="themeKey">theme</string>
+    <string name="volumeKey">volume</string>
     <string name="sharedPreferencesFileName">com.justdoit.secretpath</string>
     <string name="level02TextQuestion">Are you ready to take off?</string>
     <string-array name="wrongInput">

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundDark"
+    android:background="?android:colorBackground"
     tools:context=".LevelsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:maxWidth="200dp"
             android:text="@string/levelsTitle"
-            android:textColor="#1F1578"
+            android:textColor="?android:textColorPrimary"
             android:textSize="50sp"
             app:fontFamily="@font/bubblegum_sans"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -39,22 +39,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageButton
+            <Button
                 android:id="@+id/levelsMenuButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/ic_menu"
+                app:backgroundTint ="?android:textColorSecondary"
                 android:minWidth="50dp"
                 android:minHeight="50dp"
                 android:contentDescription="@string/levelsMenuButtonDescription"
                 android:onClick="menuButtonOnClick" />
 
-            <ImageButton
+            <Button
                 android:id="@+id/levelsSettingsButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_settings"
+                app:backgroundTint ="?android:textColorSecondary"
                 android:minWidth="50dp"
                 android:minHeight="50dp"
                 android:contentDescription="@string/levelsSettingsButtonDescription"
@@ -80,11 +82,12 @@
             app:layout_constraintHorizontal_bias="0.3"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageButton
+            <Button
                 android:id="@+id/selectLevelUpButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_arrow_up"
+                app:backgroundTint ="?android:textColorSecondary"
                 android:contentDescription="@string/levelsMenuButtonDescription"
                 android:minWidth="100dp"
                 android:minHeight="100dp"
@@ -94,17 +97,18 @@
                 android:id="@+id/selectLevelNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#AAAAAA"
+                android:textColor="?android:textColorSecondary"
                 android:textSize="70sp"
                 android:textAlignment="center"
                 android:gravity="center_horizontal"
                 app:fontFamily="@font/bubblegum_sans"/>
 
-            <ImageButton
+            <Button
                 android:id="@+id/selectLevelDownButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_arrow_down"
+                app:backgroundTint ="?android:textColorSecondary"
                 android:contentDescription="@string/levelsMenuButtonDescription"
                 android:minWidth="100dp"
                 android:minHeight="100dp"
@@ -120,6 +124,7 @@
             android:minWidth="125dp"
             android:minHeight="125dp"
             android:onClick="playButtonOnClick"
+            app:backgroundTint="?android:textColorSecondary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.75"

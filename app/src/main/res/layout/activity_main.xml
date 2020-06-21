@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundDark"
+    android:background="?android:colorBackground"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +19,7 @@
             android:layout_width="266dp"
             android:layout_height="138dp"
             android:text="@string/gameName"
-            android:textColor="#1F1578"
+            android:textColor="?android:textColorPrimary"
             android:textSize="49sp"
             app:fontFamily="@font/bubblegum_sans"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -44,7 +44,8 @@
             android:layout_width="200dp"
             android:layout_height="70dp"
             android:layout_alignParentTop="true"
-            android:background="#BABABA"
+            android:background="?android:textColorSecondary"
+            android:textColor="?android:colorBackground"
             android:onClick="playButtonOnClick"
             android:text="@string/playButtonText"
             android:textAllCaps="false"
@@ -56,7 +57,8 @@
             android:layout_height="70dp"
             android:layout_below="@+id/menuPlayButton"
             android:layout_marginTop="30dp"
-            android:background="#BABABA"
+            android:background="?android:textColorSecondary"
+            android:textColor="?android:colorBackground"
             android:onClick="levelsButtonOnClick"
             android:text="@string/levelButtonText"
             android:textAllCaps="false"
@@ -68,11 +70,11 @@
             android:layout_height="70dp"
             android:layout_below="@+id/menuLevelsButton"
             android:layout_marginTop="30dp"
-            android:background="#BABABA"
+            android:background="?android:textColorSecondary"
+            android:textColor="?android:colorBackground"
             android:onClick="settingsButtonOnClick"
             android:text="@string/settingsButtonText"
             android:textAllCaps="false"
             android:textSize="24sp" />
     </RelativeLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
