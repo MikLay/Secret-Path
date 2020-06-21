@@ -31,7 +31,7 @@ public class SimplestLevelFragment extends LevelModelFragment {
     @Override
     public void handleInput(String input) {
         Log.d(LOG_TAG, "Handle userInput");
-        if (input.equals("Secret Path")) {
+        if (input.equalsIgnoreCase("Secret Path")) {
             this.callback.levelCompleted();
         }
     }
