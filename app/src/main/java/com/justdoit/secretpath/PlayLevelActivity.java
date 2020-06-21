@@ -1,10 +1,12 @@
 package com.justdoit.secretpath;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -50,6 +52,19 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
         currentLevel.handleInput(userInputEditText.getText().toString());
     }
 
+    public void levelsButtonOnClick(View view) {
+        Log.d(LOG_TAG, "LevelsButton clicked");
+        Intent levelsIntent = new Intent(this, LevelsActivity.class);
+        finish();
+        startActivity(levelsIntent);
+    }
+
+    public void settingsButtonOnClick(View view) {
+        Log.d(LOG_TAG, "SettingsButton clicked");
+        Intent settingsIntent = new Intent(this, SettingsActivity.class);
+        startActivity(settingsIntent);
+    }
+
     @Override
     public void levelCompleted() {
         int levelId = mPreferences.getInt(LEVEL_KEY, 0);
@@ -66,6 +81,8 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             }
             preferencesEditor.apply();
         }
+
+        levelsButtonOnClick(null);
     }
 
     private void setLevel(int id) {
@@ -79,6 +96,9 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             fragmentTransaction.add(R.id.levelFragmentContainer, currentLevel);
             fragmentTransaction.commit();
         } else {
+            // TODO fix level name rendering
+            TextView titleView = findViewById(R.id.title);
+            titleView.setText(currentLevel.getLevelDetails().getName());
             currentLevel = LEVELS[id];
             Log.d(LOG_TAG, "Set next LevelFragment");
             fragmentTransaction.replace(R.id.levelFragmentContainer, currentLevel);
