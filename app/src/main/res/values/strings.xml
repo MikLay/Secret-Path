@@ -26,4 +26,10 @@
     <string name="levelKey">current_level</string>
     <string name="sharedPreferencesFileName">com.justdoit.secretpath</string>
     <string name="level02TextQuestion">Are you ready to take off?</string>
+    <string-array name="wrongInput">
+        <item>Навіть не знаю що вам на це відповісти</item>
+        <item>Що за белеберда?</item>
+        <item>Ви впевненні, що ви сьогодні не пили?</item>
+        <item>А може вам треба відпочинок, щоб продовжити?</item>
+    </string-array>
 </resources>

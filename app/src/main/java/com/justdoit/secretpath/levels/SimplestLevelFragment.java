@@ -32,7 +32,9 @@ public class SimplestLevelFragment extends LevelModelFragment {
     public void handleInput(String input) {
         Log.d(LOG_TAG, "Handle userInput");
         if (input.equalsIgnoreCase("Secret Path")) {
-            this.callback.levelCompleted();
+            this.callback.levelCompleted("Ну і як, складненько було?");
+        }else{
+            this.callback.wrongInput();
         }
     }
 }

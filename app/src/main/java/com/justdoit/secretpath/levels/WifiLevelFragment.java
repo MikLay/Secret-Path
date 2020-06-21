@@ -55,6 +55,7 @@ public class WifiLevelFragment extends LevelModelFragment {
 
     @Override
     public void handleInput(String input) {
+        this.callback.wrongInput();
     }
 
     private BroadcastReceiver wifiStateReceiver = new BroadcastReceiver() {
@@ -64,7 +65,7 @@ public class WifiLevelFragment extends LevelModelFragment {
             if (action != null && action.equals(WifiManager.WIFI_STATE_CHANGED_ACTION)) {
                 if (intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, WifiManager.WIFI_STATE_UNKNOWN) == WifiManager.WIFI_STATE_DISABLED) {
                     Log.d(LOG_TAG, "Wifi is disabled!");
-                    callback.levelCompleted();
+                    callback.levelCompleted("Дякую за проходження");
                 }
             }
         }

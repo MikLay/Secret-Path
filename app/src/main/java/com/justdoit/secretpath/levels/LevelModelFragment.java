@@ -54,6 +54,7 @@ public abstract class LevelModelFragment extends Fragment {
     public abstract void handleInput(String input);
 
     public interface ActivityCallBack {
-        void levelCompleted();
+        void levelCompleted(String levelCompleted);
+        void wrongInput();
     }
 }

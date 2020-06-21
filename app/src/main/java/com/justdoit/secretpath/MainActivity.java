@@ -54,9 +54,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        SharedPreferences.Editor preferencesEditor = mPreferences.edit();
-        preferencesEditor.putInt(LEVEL_KEY, 0);
-        preferencesEditor.putInt(PROGRESS_KEY, progress);
-        preferencesEditor.apply();
+
     }
 }
