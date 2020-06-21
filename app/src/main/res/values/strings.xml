@@ -24,6 +24,8 @@
     <string name="sendUserInputButtonText">Send</string>
     <string name="progressKey">progress</string>
     <string name="levelKey">current_level</string>
+    <string name="themeKey">theme</string>
+    <string name="volumeKey">volume</string>
     <string name="sharedPreferencesFileName">com.justdoit.secretpath</string>
     <string name="level02TextQuestion">Are you ready to take off?</string>
 </resources>
