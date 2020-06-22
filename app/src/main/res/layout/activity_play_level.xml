@@ -23,52 +23,54 @@
                 android:id="@+id/menuButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:background="@drawable/ic_menu"
-                app:backgroundTint="?android:textColorSecondary"
                 android:contentDescription="@string/levelsMenuButtonDescription"
                 android:minWidth="50dp"
                 android:minHeight="50dp"
-                android:layout_margin="10dp"
                 android:onClick="levelsButtonOnClick"
+                app:backgroundTint="?android:textColorSecondary"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/settingsButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:background="@drawable/ic_settings"
-                app:backgroundTint="?android:textColorSecondary"
                 android:contentDescription="@string/levelsSettingsButtonDescription"
                 android:minWidth="50dp"
                 android:minHeight="50dp"
-                android:layout_margin="10dp"
                 android:onClick="settingsButtonOnClick"
+                app:backgroundTint="?android:textColorSecondary"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/hintsButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
                 android:background="@drawable/ic_hint"
                 android:contentDescription="@string/levelsSettingsButtonDescription"
-                app:backgroundTint="?android:textColorSecondary"
                 android:minWidth="50dp"
                 android:minHeight="50dp"
-                android:layout_margin="10dp"
                 android:onClick="hintsButtonOnClick"
+                app:backgroundTint="?android:textColorSecondary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.8"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/levelNameTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="329dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
             android:text="@string/levelsTitle"
             android:textColor="?android:textColorPrimary"
             android:textSize="50sp"

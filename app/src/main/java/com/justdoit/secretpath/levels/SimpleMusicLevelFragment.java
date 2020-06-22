@@ -22,7 +22,7 @@ public class SimpleMusicLevelFragment  extends LevelModelFragment{
         String[] hints = {"Лблю я nations, навіть якщо їх seven", "Щось white та stripped"};
 
         this.levelDetails = new LevelDetails(
-                3,
+                7,
                 "Заграю для тебе",
                 hints);
     }

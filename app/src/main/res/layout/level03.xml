@@ -19,6 +19,7 @@
             android:layout_height="201dp"
             android:layout_marginTop="84dp"
             android:text="@string/level03TextQuestion"
+            app:fontFamily="@font/fira_mono_bold"
             android:textColor="?android:textColorSecondary"
             android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
