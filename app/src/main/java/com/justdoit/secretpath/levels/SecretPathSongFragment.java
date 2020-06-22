@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 
 import com.justdoit.secretpath.R;
 
-public class SecretPathSong extends LevelModelFragment {
-    private static final String LOG_TAG = SecretPathSong.class.getSimpleName();
+public class SecretPathSongFragment extends LevelModelFragment {
+    private static final String LOG_TAG = SecretPathSongFragment.class.getSimpleName();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class SecretPathSong extends LevelModelFragment {
     @Override
     protected View provideFragmentView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         Log.d(LOG_TAG, "Fragment rendering");
-        View view = inflater.inflate(R.layout.level04, parent, false);
+        View view = inflater.inflate(R.layout.level05, parent, false);
         return view;
     }
 

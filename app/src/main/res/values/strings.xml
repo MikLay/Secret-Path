@@ -37,6 +37,7 @@
         <item>А може вам треба відпочинок, щоб продовжити?</item>
     </string-array>
     <string name="level03TextQuestion">Цього року початок усього. Час пішов...</string>
-    <string name="level04TextQuestion">Неріна рівність володіє нами</string>
+    <string name="level04TextQuestion">Нерівна рівність володіє нами</string>
     <string name="level05TextQuestion">Прислухайся та скажи мій порядковий номер</string>
+    <string name="level06TextQuestion">Темрява не дозволяє побачити вихід</string>
 </resources>
