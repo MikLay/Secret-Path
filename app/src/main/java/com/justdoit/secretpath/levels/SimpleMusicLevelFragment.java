@@ -19,16 +19,18 @@ public class SimpleMusicLevelFragment  extends LevelModelFragment{
 
 
     public SimpleMusicLevelFragment() {
+        String[] hints = {"Лблю я nations, навіть якщо їх seven", "Щось white та stripped"};
+
         this.levelDetails = new LevelDetails(
                 3,
-                "Melody...",
-                new String[]{"I like nations, even if there are seven", "Something white and stripped"});
+                "Заграю для тебе",
+                hints);
     }
 
     @Override
     protected View provideFragmentView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         Log.d(LOG_TAG, "Fragment rendering");
-        View view = inflater.inflate(R.layout.level03, parent, false);
+        View view = inflater.inflate(R.layout.level07, parent, false);
         imageView = (ImageView) view.findViewById(R.id.musicLogo);
         final MediaPlayer mediaPlayer = MediaPlayer.create(getContext(), R.raw.whitestripessample);
         imageView.setOnClickListener(new View.OnClickListener() {

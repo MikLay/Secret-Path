@@ -13,11 +13,10 @@ public class SimplestLevelFragment extends LevelModelFragment {
             SimplestLevelFragment.class.getSimpleName();
 
     public SimplestLevelFragment() {
-
         this.levelDetails = new LevelDetails(
                 1,
-                "The simplest level I have ever seen",
-                new String[]{"Enter the name of program"});
+                "Дуже складно",
+                new String[]{"Можливо вийдете й глянете як називається гра?", "Введіть назву гри, не засмучуйте мене..", "Secret ...", "Ну лол, Secret Pa..", "Secret Path"});
     }
 
     @Override

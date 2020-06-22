@@ -20,13 +20,18 @@ public class WifiLevelFragment extends LevelModelFragment {
     private static final String LOG_TAG =
             WifiLevelFragment.class.getSimpleName();
 
+
+    public WifiLevelFragment() {
+        final String[] hints = {"Забудь про мережу назавжди", "А що вимикають перед взльотом?"};
+        levelDetails = new LevelDetails(
+                2,
+                "Вжжж...",
+                hints);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        levelDetails = new LevelDetails(
-                2,
-                "No connection level...",
-                new String[]{"Try to forget about network", "Is it good to be without internet connection?", "Turn off wifi"});
         wifiManager = (WifiManager) getActivity().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
     }
 

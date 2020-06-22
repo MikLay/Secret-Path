@@ -11,12 +11,12 @@ import com.justdoit.secretpath.R;
 public class StartOfTimesFragment extends LevelModelFragment {
     private static final String LOG_TAG = StartOfTimesFragment.class.getSimpleName();
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public StartOfTimesFragment() {
         String[] hints = {"Подумай про початок в обчислювальній техніці", "Рік, що вважається початком відліку часу в комп'ютерах"};
-        levelDetails = new LevelDetails(3, "Level 3", hints);
+        levelDetails = new LevelDetails(3, "Попрограмуємо?", hints);
     }
+
+
 
     @Override
     protected View provideFragmentView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {

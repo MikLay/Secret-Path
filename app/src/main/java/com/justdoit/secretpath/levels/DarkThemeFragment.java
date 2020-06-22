@@ -14,13 +14,16 @@ import static android.content.Context.MODE_PRIVATE;
 public class DarkThemeFragment extends LevelModelFragment {
     private static final String LOG_TAG = DarkThemeFragment.class.getSimpleName();
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public DarkThemeFragment() {
         levelDetails = new LevelDetails(
                 6,
                 "Темрява",
                 new String[]{"Увімкни день", "Зроби все довкола світлішим"});
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         new Thread(new Runnable() {
             @Override

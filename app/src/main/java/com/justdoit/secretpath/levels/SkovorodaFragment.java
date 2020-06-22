@@ -11,12 +11,12 @@ import com.justdoit.secretpath.R;
 public class SkovorodaFragment extends LevelModelFragment {
     private static final String LOG_TAG = SkovorodaFragment.class.getSimpleName();
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        String[] hints = {"Цій людині належить ідея нерівної рівності"};
-        levelDetails = new LevelDetails(4, "Level 4", hints);
+
+    public SkovorodaFragment() {
+        final String[] hints = {"Цій людині належить ідея нерівної рівності"};
+        levelDetails = new LevelDetails(4, "Високі думки", hints);
     }
+
 
     @Override
     protected View provideFragmentView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {

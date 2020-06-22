@@ -11,11 +11,9 @@ import com.justdoit.secretpath.R;
 public class SecretPathSongFragment extends LevelModelFragment {
     private static final String LOG_TAG = SecretPathSongFragment.class.getSimpleName();
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public SecretPathSongFragment() {
         String[] hints = {"Послухай музику та відпочинь", "Знаєш музичний альбом 'Secret Path'?"};
-        levelDetails = new LevelDetails(5, "Сковорода", hints);
+        levelDetails = new LevelDetails(5, "Меломанія SP", hints);
     }
 
     @Override

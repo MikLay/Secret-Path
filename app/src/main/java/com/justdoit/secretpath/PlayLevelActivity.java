@@ -18,13 +18,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.justdoit.secretpath.levels.DarkThemeFragment;
-import com.justdoit.secretpath.levels.SecretPathSongFragment;
-import com.justdoit.secretpath.levels.SkovorodaFragment;
-import com.justdoit.secretpath.levels.StartOfTimesFragment;
 import com.justdoit.secretpath.levels.LevelModelFragment;
+import com.justdoit.secretpath.levels.SecretPathSongFragment;
 import com.justdoit.secretpath.levels.SimpleMusicLevelFragment;
 import com.justdoit.secretpath.levels.SimplestLevelFragment;
+import com.justdoit.secretpath.levels.SkovorodaFragment;
+import com.justdoit.secretpath.levels.StartOfTimesFragment;
 import com.justdoit.secretpath.levels.WifiLevelFragment;
 
 import java.util.Random;
@@ -34,11 +33,11 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
     protected static final LevelModelFragment[] LEVELS = {
             new SimplestLevelFragment(),
             new WifiLevelFragment(),
-            new SimpleMusicLevelFragment(),
             new StartOfTimesFragment(),
             new SkovorodaFragment(),
 //            new DarkThemeFragment(),
             new SecretPathSongFragment(),
+            new SimpleMusicLevelFragment()
     };
     private static final String LOG_TAG =
             PlayLevelActivity.class.getSimpleName();
@@ -48,10 +47,14 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
 
     private SharedPreferences mPreferences;
     private LevelModelFragment currentLevel;
-    private EditText userInputEditText;
+
     private int theme;
     private int hintIndex;
     private String[] wrongText;
+
+    private EditText userInputEditText;
+    private TextView titleTextView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,12 +74,12 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
         wrongText = getResources().getStringArray(R.array.wrongInput);
 
         userInputEditText = findViewById(R.id.userInput);
+        titleTextView = findViewById(R.id.levelNameTitle);
 
-        mPreferences = getSharedPreferences(
-                getString(R.string.sharedPreferencesFileName), MODE_PRIVATE);
-
-        System.out.println(mPreferences.getInt(PROGRESS_KEY, 0));
         setLevel(mPreferences.getInt(LEVEL_KEY, 0));
+        System.out.println(currentLevel.toString());
+        titleTextView.setText(currentLevel.getLevelDetails().getName());
+
     }
 
     public void handleUserInput(View view) {
@@ -170,8 +173,6 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
     }
 
     private void setLevel(int id) {
-        System.out.println(id);
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         if (currentLevel == null) {
@@ -180,9 +181,6 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             fragmentTransaction.add(R.id.levelFragmentContainer, currentLevel);
             fragmentTransaction.commit();
         } else {
-            // TODO fix level name rendering
-            TextView titleView = findViewById(R.id.title);
-            titleView.setText(currentLevel.getLevelDetails().getName());
             currentLevel = LEVELS[id];
             Log.d(LOG_TAG, "Set next LevelFragment");
             fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_in_right);
@@ -190,6 +188,7 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
             userInputEditText.setText("");
+            titleTextView.setText(currentLevel.getLevelDetails().getName());
         }
 
         hintIndex = mPreferences.getInt(HINT_INDEX_KEY + id, 0);
