@@ -21,15 +21,15 @@
 
     <!-- First level -->
 
-    <string name="level01TextQuestion">What are you playing right now?</string>
-    <string name="userInputHint">Enter command</string>
-    <string name="sendUserInputButtonText">Send</string>
+    <string name="level01TextQuestion">Привіт-привіт!\n А в що це ми граємо?</string>
+    <string name="userInputHint">Введіть команду</string>
+    <string name="sendUserInputButtonText">Надіслати</string>
     <string name="progressKey">progress</string>
     <string name="levelKey">current_level</string>
     <string name="themeKey">theme</string>
     <string name="volumeKey">volume</string>
     <string name="sharedPreferencesFileName">com.justdoit.secretpath</string>
-    <string name="level02TextQuestion">Are you ready to take off?</string>
+    <string name="level02TextQuestion">Ну що готові до взльоту?</string>
     <string-array name="wrongInput">
         <item>Навіть не знаю що вам на це відповісти</item>
         <item>Що за белеберда?</item>

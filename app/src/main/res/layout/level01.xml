@@ -15,12 +15,12 @@
 
         <TextView
             android:id="@+id/text1"
-            android:layout_width="199dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="84dp"
+            android:layout_width="308dp"
+            android:layout_height="317dp"
             android:text="@string/level01TextQuestion"
-            android:textSize="36sp"
             android:textColor="?android:textColorSecondary"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

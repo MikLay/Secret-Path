@@ -8,9 +8,58 @@
     tools:context=".PlayLevelActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="0dp"
+        android:layout_height="141dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/userInput"
+            android:layout_width="269dp"
+            android:layout_height="76dp"
+            android:layout_marginLeft="16dp"
+            android:ems="10"
+            android:hint="@string/userInputHint"
+            android:inputType="text"
+            android:textSize="30sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/submitUserInputButton"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintHorizontal_weight="4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintVertical_weight="3" />
+
+        <Button
+            android:id="@+id/submitUserInputButton"
+            android:layout_width="94dp"
+            android:layout_height="77dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/send_icon"
+            android:onClick="handleUserInput"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/userInput"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintVertical_weight="1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="177dp"
+        android:layout_width="406dp"
+        android:layout_height="154dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -30,22 +79,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/ic_menu"
-                app:backgroundTint="?android:textColorSecondary"
                 android:contentDescription="@string/levelsMenuButtonDescription"
                 android:minWidth="50dp"
                 android:minHeight="50dp"
-                android:onClick="levelsButtonOnClick" />
-
-            <Button
-                android:id="@+id/settingsButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_settings"
-                app:backgroundTint="?android:textColorSecondary"
-                android:contentDescription="@string/levelsSettingsButtonDescription"
-                android:minWidth="50dp"
-                android:minHeight="50dp"
-                android:onClick="settingsButtonOnClick" />
+                android:onClick="levelsButtonOnClick"
+                app:backgroundTint="?android:textColorSecondary" />
 
             <ImageButton
                 android:id="@+id/hintsButton"
@@ -73,44 +111,16 @@
             app:layout_constraintHorizontal_bias="0.3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:id="@+id/levelFragmentContainer"
-        android:layout_width="410dp"
-        android:layout_height="392dp"
-        android:layout_marginTop="180dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/inputLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
-    </FrameLayout>
-
-    <EditText
-        android:id="@+id/userInput"
-        android:layout_width="305dp"
-        android:layout_height="85dp"
-        android:ems="10"
-        android:inputType="text"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/levelFragmentContainer"
-        app:layout_constraintVertical_bias="1.0"
-        android:hint="@string/userInputHint" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="89dp"
-        android:layout_height="81dp"
-        android:text="@string/sendUserInputButtonText"
-        android:textSize="24sp"
-        android:onClick="handleUserInput"
-        android:textColor="?android:textColorSecondary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/userInput"
-        app:layout_constraintTop_toBottomOf="@+id/levelFragmentContainer" />
 </androidx.constraintlayout.widget.ConstraintLayout>
