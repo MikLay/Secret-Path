@@ -7,27 +7,72 @@
     android:background="?android:colorBackground"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/menuLayout1"
-        android:layout_width="409dp"
-        android:layout_height="277dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <Button
+            android:id="@+id/levelsSettingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_settings"
+            app:backgroundTint ="?android:textColorSecondary"
+            android:minWidth="50dp"
+            android:minHeight="50dp"
+            android:contentDescription="@string/levelsSettingsButtonDescription"
+            android:onClick="settingsButtonOnClick"
+            android:layout_gravity="end"
+            android:layout_margin="10dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="144dp"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/menuTitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:text="@string/gameName1"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="70sp"
+                app:fontFamily="@font/fira_mono_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/menuTitle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:includeFontPadding="false"
+                android:text="@string/gameName2"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="70sp"
+                app:fontFamily="@font/fira_mono_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <TextView
-            android:id="@+id/menuTitle"
-            android:layout_width="266dp"
-            android:layout_height="138dp"
-            android:text="@string/gameName"
-            android:textColor="?android:textColorPrimary"
-            android:textSize="49sp"
-            app:fontFamily="@font/bubblegum_sans"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:id="@+id/menuDescription"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="65dp"
+            android:layout_marginStart="65dp"
+            android:includeFontPadding="false"
+            android:text="@string/gameDescription"
+            android:textColor="?android:textColorTertiary"
+            android:textSize="25sp"
+            app:fontFamily="@font/fira_mono_bold" />
+    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/menuLayout2"
@@ -44,12 +89,14 @@
             android:layout_width="200dp"
             android:layout_height="70dp"
             android:layout_alignParentTop="true"
-            android:background="?android:textColorSecondary"
-            android:textColor="?android:colorBackground"
+            android:background="@drawable/button_menu"
+            app:backgroundTint="?android:textColorSecondary"
             android:onClick="playButtonOnClick"
             android:text="@string/playButtonText"
+            android:textColor="?android:colorBackground"
             android:textAllCaps="false"
-            android:textSize="24sp" />
+            android:textSize="33sp"
+            app:fontFamily="@font/fira_mono_bold" />
 
         <Button
             android:id="@+id/menuLevelsButton"
@@ -57,24 +104,13 @@
             android:layout_height="70dp"
             android:layout_below="@+id/menuPlayButton"
             android:layout_marginTop="30dp"
-            android:background="?android:textColorSecondary"
-            android:textColor="?android:colorBackground"
+            android:background="@drawable/button_menu"
+            app:backgroundTint="?android:textColorPrimary"
             android:onClick="levelsButtonOnClick"
             android:text="@string/levelButtonText"
-            android:textAllCaps="false"
-            android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/menuSettingsButton"
-            android:layout_width="200dp"
-            android:layout_height="70dp"
-            android:layout_below="@+id/menuLevelsButton"
-            android:layout_marginTop="30dp"
-            android:background="?android:textColorSecondary"
             android:textColor="?android:colorBackground"
-            android:onClick="settingsButtonOnClick"
-            android:text="@string/settingsButtonText"
             android:textAllCaps="false"
-            android:textSize="24sp" />
+            android:textSize="33sp"
+            app:fontFamily="@font/fira_mono_bold" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

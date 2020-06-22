@@ -1,6 +1,8 @@
 <resources>
     <string name="appName">Secret Path</string>
-    <string name="gameName">SECRET PATH</string>
+    <string name="gameName1">SECRET </string>
+    <string name="gameName2">PATH</string>
+    <string name="gameDescription">Знайди свій шлях…</string>
     <string name="levelsTitle">Рівні</string>
     <string name="settingsTitle">Налаштування</string>
     <string name="playButtonText">Грати</string>
@@ -12,7 +14,7 @@
     <string name="settingsBackButtonDescription">Go back to Menu</string>
     <string name="settingsSound">Звук</string>
     <string name="settingsTheme">Тема</string>
-    <string name="settingsShare">Поділитися…</string>
+    <string name="settingsShare">Розповісти…</string>
     <string name="settingsSoundDescription">Toggle sounds on/off</string>
     <string name="settingsThemeDescription">Toggle theme</string>
     <string name="settingsShareDescription">Share</string>
