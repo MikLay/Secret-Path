@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    tools:context=".LevelsActivity">
+
+    <LinearLayout
+        android:id="@+id/levelsLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/levelsMenuButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_menu"
+                app:backgroundTint ="?android:textColorSecondary"
+                android:minWidth="50dp"
+                android:minHeight="50dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/levelsMenuButtonDescription"
+                android:onClick="menuButtonOnClick"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/levelsSettingsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_settings"
+                app:backgroundTint ="?android:textColorSecondary"
+                android:minWidth="50dp"
+                android:minHeight="50dp"
+                android:maxWidth="50dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/levelsSettingsButtonDescription"
+                android:onClick="settingsButtonOnClick"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/levelsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/levelsTitle"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="70sp"
+            app:fontFamily="@font/fira_mono_bold" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/levelsLayout1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <Button
+                android:id="@+id/selectLevelUpButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_arrow_up"
+                app:backgroundTint ="?android:textColorSecondary"
+                android:contentDescription="@string/levelsMenuButtonDescription"
+                android:minWidth="100dp"
+                android:minHeight="100dp"
+                android:onClick="upButtonOnClick" />
+
+            <TextView
+                android:id="@+id/selectLevelNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="?android:textColorSecondary"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:textSize="60sp"
+                android:onClick="playButtonOnClick"
+                app:fontFamily="@font/fira_mono_bold"/>
+
+            <Button
+                android:id="@+id/selectLevelDownButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_arrow_down"
+                app:backgroundTint ="?android:textColorSecondary"
+                android:contentDescription="@string/levelsMenuButtonDescription"
+                android:minWidth="100dp"
+                android:minHeight="100dp"
+                android:onClick="downButtonOnClick" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/levelsStartButtonText"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="60sp"
+            android:layout_gravity="center"
+            android:onClick="playButtonOnClick"
+            app:fontFamily="@font/fira_mono_bold"/>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

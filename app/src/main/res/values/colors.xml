@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <!--  Dark theme  -->
+    <color name="backgroundDark">#343F4B</color>
+    <color name="primaryDark">#8D9EDA</color>
+    <color name="secondaryDark">#D6DBEA</color>
+    <color name="lockedDark">#5A6978</color>
+
+    <!--  Light theme  -->
+    <color name="backgroundLight">#F4EFE8</color>
+    <color name="primaryLight">#F95F62</color>
+    <color name="secondaryLight">#5A6978</color>
+    <color name="lockedLight">#E2D2B7</color>
 </resources>

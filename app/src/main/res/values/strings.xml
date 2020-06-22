@@ -1,3 +1,46 @@
 <resources>
-    <string name="app_name">Secret Path</string>
+    <string name="appName">Secret Path</string>
+    <string name="gameName1">SECRET </string>
+    <string name="gameName2">PATH</string>
+    <string name="gameDescription">Знайди свій шлях…</string>
+    <string name="levelsTitle">Рівні</string>
+    <string name="settingsTitle">Налаштування</string>
+    <string name="playButtonText">Грати</string>
+    <string name="levelButtonText">Рівні</string>
+    <string name="settingsButtonText">Налаштування</string>
+    <string name="levelsStartButtonText">рівень</string>
+    <string name="levelsMenuButtonDescription">Go back to Menu</string>
+    <string name="levelsSettingsButtonDescription">Go to Settings</string>
+    <string name="levelsPlayButtonDescription">Start the level</string>
+    <string name="settingsBackButtonDescription">Go back to Menu</string>
+    <string name="levelSendButtonDescription">Send your answer</string>
+    <string name="settingsSound">Звук</string>
+    <string name="settingsTheme">Тема</string>
+    <string name="settingsShare">Розповісти…</string>
+    <string name="settingsSoundDescription">Toggle sounds on/off</string>
+    <string name="settingsThemeDescription">Toggle theme</string>
+    <string name="settingsShareDescription">Share</string>
+
+    <!-- First level -->
+
+    <string name="userInputHint">Поле вводу тут</string>
+    <string name="sendUserInputButtonText">Надіслати</string>
+    <string name="progressKey">progress</string>
+    <string name="levelKey">current_level</string>
+    <string name="themeKey">theme</string>
+    <string name="volumeKey">volume</string>
+    <string name="sharedPreferencesFileName">com.justdoit.secretpath</string>
+    <string-array name="wrongInput">
+        <item>Навіть не знаю що вам на це відповісти</item>
+        <item>Що за белеберда?</item>
+        <item>Ви впевненні, що ви сьогодні не пили?</item>
+        <item>А може вам треба відпочинок, щоб продовжити?</item>
+    </string-array>
+
+    <string name="level01TextQuestion">Привіт-привіт!\n А в що це ми граємо?</string>
+    <string name="level02TextQuestion">Ну що готові до взльоту?</string>
+    <string name="level03TextQuestion">Цього року початок усього.\nЧас пішов…</string>
+    <string name="level04TextQuestion">Нерівна рівність володіє нами</string>
+    <string name="level05TextQuestion">Прислухайся та скажи мій порядковий номер</string>
+    <string name="level06TextQuestion">Темрява не дозволяє побачити вихід</string>
 </resources>

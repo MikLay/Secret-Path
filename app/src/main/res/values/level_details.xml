@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="levelId01">1</integer>
+    <string name="levelName01">The simplest level I have ever seen</string>
+    <string-array name="hints01">
+        <item>Enter the name of program</item>
+        <item>Secret …</item>
+        <item>Secret Path</item>
+        <item>Lol, write previous hint</item>
+    </string-array>
+</resources>
