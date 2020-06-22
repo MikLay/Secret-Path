@@ -40,7 +40,7 @@ public class LevelsActivity extends AppCompatActivity {
 
         progress = mPreferences.getInt(getString(R.string.progressKey), 0);
         levelNumber = findViewById(R.id.selectLevelNumber);
-        levelNumber.setText(String.valueOf(progress + 1));
+        levelNumber.setText(String.valueOf(mPreferences.getInt(getString(R.string.levelKey), 0) + 1));
     }
 
     public void menuButtonOnClick(View view) {
@@ -59,8 +59,9 @@ public class LevelsActivity extends AppCompatActivity {
     public void upButtonOnClick(View view) {
         Log.d(LOG_TAG, "UpButton clicked");
         int selected = Integer.parseInt((String) levelNumber.getText());
+        int upperLimit = Math.min(progress + 1, levelsTotal);
 
-        if (selected == progress + 1)
+        if (selected == upperLimit)
             levelNumber.setText("1");
         else
             levelNumber.setText(String.valueOf(selected + 1));
@@ -69,12 +70,12 @@ public class LevelsActivity extends AppCompatActivity {
     public void downButtonOnClick(View view) {
         Log.d(LOG_TAG, "DownButton clicked");
         int selected = Integer.parseInt((String) levelNumber.getText());
-        Log.d(LOG_TAG, "Selected down " + selected);
-        Log.d(LOG_TAG, "Progress down " + progress);
+        int upperLimit = Math.min(progress + 1, levelsTotal);
+
         if (selected > 1)
             levelNumber.setText(String.valueOf(selected - 1));
         else
-            levelNumber.setText(String.valueOf(progress + 1));
+            levelNumber.setText(String.valueOf(upperLimit));
     }
 
     public void playButtonOnClick(View view) {

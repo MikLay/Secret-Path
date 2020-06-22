@@ -129,7 +129,7 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             if (progress < nextLevel) {
                 preferencesEditor.putInt(PROGRESS_KEY, nextLevel);
             }
-            preferencesEditor.commit();
+            preferencesEditor.apply();
 
             new AlertDialog.Builder(this)
                     .setTitle("Рівень пройдено!")
@@ -142,7 +142,6 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
                     })
                     .show();
         } else {
-
             levelsButtonOnClick(null);
         }
     }
@@ -154,10 +153,10 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
         View toastLayout = inflater.inflate(R.layout.wrong_toast,
                 (ViewGroup) findViewById(R.id.toast_root_view));
 
-        TextView header = (TextView) toastLayout.findViewById(R.id.toast_header);
+        TextView header = toastLayout.findViewById(R.id.toast_header);
         header.setText("На жаль не вірно!");
 
-        TextView body = (TextView) toastLayout.findViewById(R.id.toast_body);
+        TextView body = toastLayout.findViewById(R.id.toast_body);
         body.setText(wrongText[new Random().nextInt(wrongText.length)]);
 
         userInputEditText.setText("");

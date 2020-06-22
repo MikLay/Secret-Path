@@ -19,7 +19,7 @@ public class SimpleMusicLevelFragment  extends LevelModelFragment{
 
 
     public SimpleMusicLevelFragment() {
-        String[] hints = {"Лблю я nations, навіть якщо їх seven", "Щось white та stripped"};
+        String[] hints = {"Люблю я nations, навіть якщо їх seven", "Щось white та stripped"};
 
         this.levelDetails = new LevelDetails(
                 7,
