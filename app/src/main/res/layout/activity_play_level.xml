@@ -7,34 +7,31 @@
     android:background="?android:colorBackground"
     tools:context=".PlayLevelActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="177dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.9"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/menuButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:background="@drawable/ic_menu"
                 app:backgroundTint="?android:textColorSecondary"
                 android:contentDescription="@string/levelsMenuButtonDescription"
                 android:minWidth="50dp"
                 android:minHeight="50dp"
-                android:onClick="levelsButtonOnClick" />
+                android:layout_margin="10dp"
+                android:onClick="levelsButtonOnClick"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <Button
                 android:id="@+id/settingsButton"
@@ -45,72 +42,105 @@
                 android:contentDescription="@string/levelsSettingsButtonDescription"
                 android:minWidth="50dp"
                 android:minHeight="50dp"
-                android:onClick="settingsButtonOnClick" />
+                android:layout_margin="10dp"
+                android:onClick="settingsButtonOnClick"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-            <ImageButton
+            <Button
                 android:id="@+id/hintsButton"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ic_hints"
+                android:background="@drawable/ic_hint"
                 android:contentDescription="@string/levelsSettingsButtonDescription"
+                app:backgroundTint="?android:textColorSecondary"
                 android:minWidth="50dp"
                 android:minHeight="50dp"
-                android:onClick="hintsButtonOnClick" />
-
-        </LinearLayout>
+                android:layout_margin="10dp"
+                android:onClick="hintsButtonOnClick"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.8"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxWidth="200dp"
+            android:layout_gravity="center"
             android:text="@string/levelsTitle"
             android:textColor="?android:textColorPrimary"
             android:textSize="50sp"
-            app:fontFamily="@font/bubblegum_sans"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            app:fontFamily="@font/fira_mono_bold" />
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/levelFragmentContainer"
-        android:layout_width="410dp"
-        android:layout_height="392dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="180dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/levelSendLayout">
     </FrameLayout>
 
-    <EditText
-        android:id="@+id/userInput"
-        android:layout_width="305dp"
-        android:layout_height="85dp"
-        android:ems="10"
-        android:inputType="text"
-        android:textSize="30sp"
+    <LinearLayout
+        android:id="@+id/levelSendLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/levelFragmentContainer"
-        app:layout_constraintVertical_bias="1.0"
-        android:hint="@string/userInputHint" />
+        android:padding="10dp">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="89dp"
-        android:layout_height="81dp"
-        android:text="@string/sendUserInputButtonText"
-        android:textSize="24sp"
-        android:onClick="handleUserInput"
-        android:textColor="?android:textColorSecondary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/userInput"
-        app:layout_constraintTop_toBottomOf="@+id/levelFragmentContainer" />
+        <EditText
+            android:id="@+id/userInput"
+            android:layout_width="285dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/userInputHint"
+            android:inputType="text"
+            android:textSize="20sp"
+            android:textColor="?android:textColorSecondary"
+            android:textColorHint="?android:textColorTertiary"
+            app:backgroundTint="?android:textColorTertiary"
+            app:fontFamily="@font/fira_mono_bold" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:onClick="handleUserInput">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/button_send"
+                app:backgroundTint="?android:textColorSecondary"
+                android:contentDescription="@string/levelSendButtonDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="30dp"
+                android:minHeight="30dp"
+                android:background="@drawable/ic_right_arrow"
+                app:backgroundTint="?android:colorBackground"
+                android:contentDescription="@string/levelSendButtonDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

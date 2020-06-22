@@ -8,10 +8,12 @@
     <string name="playButtonText">Грати</string>
     <string name="levelButtonText">Рівні</string>
     <string name="settingsButtonText">Налаштування</string>
+    <string name="levelsStartButtonText">рівень</string>
     <string name="levelsMenuButtonDescription">Go back to Menu</string>
     <string name="levelsSettingsButtonDescription">Go to Settings</string>
     <string name="levelsPlayButtonDescription">Start the level</string>
     <string name="settingsBackButtonDescription">Go back to Menu</string>
+    <string name="levelSendButtonDescription">Send your answer</string>
     <string name="settingsSound">Звук</string>
     <string name="settingsTheme">Тема</string>
     <string name="settingsShare">Розповісти…</string>
@@ -22,7 +24,7 @@
     <!-- First level -->
 
     <string name="level01TextQuestion">What are you playing right now?</string>
-    <string name="userInputHint">Enter command</string>
+    <string name="userInputHint">Поле вводу тут</string>
     <string name="sendUserInputButtonText">Send</string>
     <string name="progressKey">progress</string>
     <string name="levelKey">current_level</string>
