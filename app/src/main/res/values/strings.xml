@@ -19,7 +19,7 @@
 
     <!-- First level -->
 
-    <string name="level01TextQuestion">What are you playing right now?</string>
+    <string name="level01TextQuestion">Що ти граєш зараз?</string>
     <string name="userInputHint">Enter command</string>
     <string name="sendUserInputButtonText">Send</string>
     <string name="progressKey">progress</string>
@@ -27,11 +27,14 @@
     <string name="themeKey">theme</string>
     <string name="volumeKey">volume</string>
     <string name="sharedPreferencesFileName">com.justdoit.secretpath</string>
-    <string name="level02TextQuestion">Are you ready to take off?</string>
+    <string name="level02TextQuestion">Готовий до взльоту</string>
     <string-array name="wrongInput">
         <item>Навіть не знаю що вам на це відповісти</item>
         <item>Що за белеберда?</item>
         <item>Ви впевненні, що ви сьогодні не пили?</item>
         <item>А може вам треба відпочинок, щоб продовжити?</item>
     </string-array>
+    <string name="level03TextQuestion">Цього року початок усього. Час пішов...</string>
+    <string name="level04TextQuestion">Неріна рівність володіє нами</string>
+    <string name="level05TextQuestion">Прислухайся та скажи мій порядковий номер</string>
 </resources>
