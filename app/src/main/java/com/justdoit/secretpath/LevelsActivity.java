@@ -73,6 +73,8 @@ public class LevelsActivity extends AppCompatActivity {
         Log.d(LOG_TAG, "Progress down " + progress);
         if (selected > 1)
             levelNumber.setText(String.valueOf(selected - 1));
+        else
+            levelNumber.setText(String.valueOf(progress + 1));
     }
 
     public void playButtonOnClick(View view) {
