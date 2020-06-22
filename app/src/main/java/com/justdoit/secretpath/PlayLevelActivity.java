@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.justdoit.secretpath.levels.DarkThemeFragment;
 import com.justdoit.secretpath.levels.LevelModelFragment;
 import com.justdoit.secretpath.levels.SecretPathSongFragment;
 import com.justdoit.secretpath.levels.SimpleMusicLevelFragment;
@@ -35,7 +36,7 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             new WifiLevelFragment(),
             new StartOfTimesFragment(),
             new SkovorodaFragment(),
-//            new DarkThemeFragment(),
+            new DarkThemeFragment(),
             new SecretPathSongFragment(),
             new SimpleMusicLevelFragment()
     };

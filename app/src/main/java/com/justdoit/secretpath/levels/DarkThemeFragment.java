@@ -24,23 +24,6 @@ public class DarkThemeFragment extends LevelModelFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                SharedPreferences preferences = getActivity().getSharedPreferences(getString(R.string.sharedPreferencesFileName), MODE_PRIVATE);
-                boolean darkThemeEnabled = preferences.getInt(getString(R.string.themeKey), 0) == 0;
-
-                if(!darkThemeEnabled) {
-                    callback.levelCompleted("Так дійсно світліше");
-                }
-            }
-        }).start();
     }
 
     @Override
@@ -53,6 +36,10 @@ public class DarkThemeFragment extends LevelModelFragment {
 
     @Override
     public void handleInput(String input) {
-        this.callback.wrongInput();
+        if(input.equalsIgnoreCase("sunshine")) {
+            callback.levelCompleted("Так дійсно світліше");
+        } else {
+            this.callback.wrongInput();
+        }
     }
 }
