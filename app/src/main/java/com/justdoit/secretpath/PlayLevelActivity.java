@@ -77,9 +77,6 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
         titleTextView = findViewById(R.id.levelNameTitle);
 
         setLevel(mPreferences.getInt(LEVEL_KEY, 0));
-        System.out.println(currentLevel.toString());
-        titleTextView.setText(currentLevel.getLevelDetails().getName());
-
     }
 
     public void handleUserInput(View view) {
@@ -188,9 +185,9 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
             userInputEditText.setText("");
-            titleTextView.setText(currentLevel.getLevelDetails().getName());
         }
 
+        titleTextView.setText(currentLevel.getLevelDetails().getName());
         hintIndex = mPreferences.getInt(HINT_INDEX_KEY + id, 0);
     }
 
