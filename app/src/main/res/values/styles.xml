@@ -1,14 +1,18 @@
 <resources>
-    <style name="AppTheme" parent="Theme.AppCompat">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="android:textColorPrimary">@color/primaryDark</item>
         <item name="android:textColorSecondary">@color/secondaryDark</item>
+        <item name="android:textColorTertiary">@color/lockedDark</item>
         <item name="android:colorBackground">@color/backgroundDark</item>
+        <item name="android:windowFullscreen">false</item>
     </style>
-    <style name="LightTheme" parent="Theme.AppCompat">
+    <style name="LightTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="android:textColorPrimary">@color/primaryLight</item>
         <item name="android:textColorSecondary">@color/secondaryLight</item>
+        <item name="android:textColorTertiary">@color/lockedLight</item>
         <item name="android:colorBackground">@color/backgroundLight</item>
+        <item name="android:windowFullscreen">false</item>
     </style>
 </resources>

@@ -7,8 +7,8 @@
     <color name="lockedDark">#5A6978</color>
 
     <!--  Light theme  -->
-    <color name="backgroundLight">#FFFFFF</color>
-    <color name="primaryLight">#8D9EDA</color>
-    <color name="secondaryLight">#D6DBEA</color>
-    <color name="lockedLight">#5A6978</color>
+    <color name="backgroundLight">#F4EFE8</color>
+    <color name="primaryLight">#F95F62</color>
+    <color name="secondaryLight">#5A6978</color>
+    <color name="lockedLight">#E2D2B7</color>
 </resources>
