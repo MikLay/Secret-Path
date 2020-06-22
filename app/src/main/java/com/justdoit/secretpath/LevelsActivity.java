@@ -57,21 +57,24 @@ public class LevelsActivity extends AppCompatActivity {
     }
 
     public void upButtonOnClick(View view) {
-        Log.d(LOG_TAG, "DownButton clicked");
+        Log.d(LOG_TAG, "UpButton clicked");
         int selected = Integer.parseInt((String) levelNumber.getText());
-        if (selected > progress || selected > levelsTotal)
+
+        if (selected == progress + 1)
             levelNumber.setText("1");
         else
             levelNumber.setText(String.valueOf(selected + 1));
     }
 
     public void downButtonOnClick(View view) {
-        Log.d(LOG_TAG, "UpButton clicked");
+        Log.d(LOG_TAG, "DownButton clicked");
         int selected = Integer.parseInt((String) levelNumber.getText());
-        if (selected == 1)
-            levelNumber.setText(String.valueOf(levelsTotal));
-        else
+        Log.d(LOG_TAG, "Selected down " + selected);
+        Log.d(LOG_TAG, "Progress down " + progress);
+        if (selected > 1)
             levelNumber.setText(String.valueOf(selected - 1));
+        else
+            levelNumber.setText(String.valueOf(progress + 1));
     }
 
     public void playButtonOnClick(View view) {
