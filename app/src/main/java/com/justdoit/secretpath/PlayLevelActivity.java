@@ -18,6 +18,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.justdoit.secretpath.levels.DarkThemeFragment;
+import com.justdoit.secretpath.levels.SecretPathSongFragment;
+import com.justdoit.secretpath.levels.SkovorodaFragment;
+import com.justdoit.secretpath.levels.StartOfTimesFragment;
 import com.justdoit.secretpath.levels.LevelModelFragment;
 import com.justdoit.secretpath.levels.SimplestLevelFragment;
 import com.justdoit.secretpath.levels.WifiLevelFragment;
@@ -28,7 +32,11 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
 
     protected static final LevelModelFragment[] LEVELS = {
             new SimplestLevelFragment(),
-            new WifiLevelFragment()
+            new WifiLevelFragment(),
+            new StartOfTimesFragment(),
+            new SkovorodaFragment(),
+//            new DarkThemeFragment(),
+            new SecretPathSongFragment(),
     };
     private static final String LOG_TAG =
             PlayLevelActivity.class.getSimpleName();
@@ -121,18 +129,16 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             }
             preferencesEditor.commit();
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("Рівень пройдено!");
-            builder.setMessage(text);
-
-            builder.setPositiveButton("Продовжити", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    setLevel(nextLevel);
-                }
-            });
-            AlertDialog dialog = builder.create();
-            dialog.show();
+            new AlertDialog.Builder(this)
+                    .setTitle("Рівень пройдено!")
+                    .setMessage(text)
+                    .setPositiveButton("Продовжити", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            setLevel(nextLevel);
+                        }
+                    })
+                    .show();
         } else {
 
             levelsButtonOnClick(null);
