@@ -19,6 +19,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.justdoit.secretpath.levels.LevelModelFragment;
+import com.justdoit.secretpath.levels.SimpleMusicLevelFragment;
 import com.justdoit.secretpath.levels.SimplestLevelFragment;
 import com.justdoit.secretpath.levels.WifiLevelFragment;
 
@@ -28,7 +29,8 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
 
     protected static final LevelModelFragment[] LEVELS = {
             new SimplestLevelFragment(),
-            new WifiLevelFragment()
+            new WifiLevelFragment(),
+            new SimpleMusicLevelFragment()
     };
     private static final String LOG_TAG =
             PlayLevelActivity.class.getSimpleName();

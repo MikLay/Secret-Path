@@ -5,6 +5,7 @@ android {
 
 
     defaultConfig {
+        android.defaultConfig.vectorDrawables.useSupportLibrary = true
         applicationId "com.example.secretpath"
         minSdkVersion 15
         targetSdkVersion 28

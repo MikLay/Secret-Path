@@ -55,7 +55,12 @@ public class WifiLevelFragment extends LevelModelFragment {
 
     @Override
     public void handleInput(String input) {
-        this.callback.wrongInput();
+        Log.d(LOG_TAG, "Handle userInput");
+        if (input.toLowerCase().contains("1234151")) {
+            this.callback.levelCompleted("Як вам трошки року??");
+        }else{
+            this.callback.wrongInput();
+        }
     }
 
     private BroadcastReceiver wifiStateReceiver = new BroadcastReceiver() {
