@@ -18,14 +18,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.justdoit.secretpath.levels.CowLevelFragment;
 import com.justdoit.secretpath.levels.DarkThemeFragment;
 import com.justdoit.secretpath.levels.LevelModelFragment;
 import com.justdoit.secretpath.levels.SecretPathSongFragment;
-import com.justdoit.secretpath.levels.SimpleMusicLevelFragment;
 import com.justdoit.secretpath.levels.SimplestLevelFragment;
 import com.justdoit.secretpath.levels.SkovorodaFragment;
 import com.justdoit.secretpath.levels.StartOfTimesFragment;
+import com.justdoit.secretpath.levels.WhereAreYouLevelFragment;
+import com.justdoit.secretpath.levels.WhiteStripesMusicLevelFragment;
 import com.justdoit.secretpath.levels.WifiLevelFragment;
+import com.justdoit.secretpath.levels.WrongLanguageLevelFragment;
 
 import java.util.Random;
 
@@ -33,12 +36,15 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
 
     protected static final LevelModelFragment[] LEVELS = {
             new SimplestLevelFragment(),
-            new WifiLevelFragment(),
             new StartOfTimesFragment(),
+            new WifiLevelFragment(),
+            new SecretPathSongFragment(),
             new SkovorodaFragment(),
             new DarkThemeFragment(),
-            new SecretPathSongFragment(),
-            new SimpleMusicLevelFragment()
+            new WhiteStripesMusicLevelFragment(),
+            new CowLevelFragment(),
+            new WrongLanguageLevelFragment(),
+            new WhereAreYouLevelFragment()
     };
     private static final String LOG_TAG =
             PlayLevelActivity.class.getSimpleName();
@@ -105,7 +111,7 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
         String[] hints = currentLevel.getLevelDetails().getHints();
 
         new AlertDialog.Builder(this)
-                .setTitle("Hint #" + (hintIndex + 1))
+                .setTitle("Підказка #" + (hintIndex + 1))
                 .setMessage(hints[hintIndex])
                 .show();
 
