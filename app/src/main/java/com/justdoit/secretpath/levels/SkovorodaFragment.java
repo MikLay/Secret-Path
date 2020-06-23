@@ -14,7 +14,7 @@ public class SkovorodaFragment extends LevelModelFragment {
 
     public SkovorodaFragment() {
         final String[] hints = {"Цій людині належить ідея нерівної рівності"};
-        levelDetails = new LevelDetails(4, "Високі думки", hints);
+        levelDetails = new LevelDetails(5, "Високі думки", hints);
     }
 
 

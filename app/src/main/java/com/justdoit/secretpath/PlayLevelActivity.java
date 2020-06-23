@@ -18,13 +18,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.justdoit.secretpath.levels.CowLevelFragment;
+import com.justdoit.secretpath.levels.DarkThemeFragment;
 import com.justdoit.secretpath.levels.LevelModelFragment;
 import com.justdoit.secretpath.levels.SecretPathSongFragment;
-import com.justdoit.secretpath.levels.SimpleMusicLevelFragment;
 import com.justdoit.secretpath.levels.SimplestLevelFragment;
 import com.justdoit.secretpath.levels.SkovorodaFragment;
 import com.justdoit.secretpath.levels.StartOfTimesFragment;
+import com.justdoit.secretpath.levels.WhereAreYouLevelFragment;
+import com.justdoit.secretpath.levels.WhiteStripesMusicLevelFragment;
 import com.justdoit.secretpath.levels.WifiLevelFragment;
+import com.justdoit.secretpath.levels.WrongLanguageLevelFragment;
 
 import java.util.Random;
 
@@ -32,12 +36,15 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
 
     protected static final LevelModelFragment[] LEVELS = {
             new SimplestLevelFragment(),
-            new WifiLevelFragment(),
             new StartOfTimesFragment(),
-            new SkovorodaFragment(),
-//            new DarkThemeFragment(),
+            new WifiLevelFragment(),
             new SecretPathSongFragment(),
-            new SimpleMusicLevelFragment()
+            new SkovorodaFragment(),
+            new DarkThemeFragment(),
+            new WhiteStripesMusicLevelFragment(),
+            new CowLevelFragment(),
+            new WrongLanguageLevelFragment(),
+            new WhereAreYouLevelFragment()
     };
     private static final String LOG_TAG =
             PlayLevelActivity.class.getSimpleName();
@@ -104,7 +111,7 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
         String[] hints = currentLevel.getLevelDetails().getHints();
 
         new AlertDialog.Builder(this)
-                .setTitle("Hint #" + (hintIndex + 1))
+                .setTitle("Підказка #" + (hintIndex + 1))
                 .setMessage(hints[hintIndex])
                 .show();
 
@@ -129,7 +136,7 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
             if (progress < nextLevel) {
                 preferencesEditor.putInt(PROGRESS_KEY, nextLevel);
             }
-            preferencesEditor.commit();
+            preferencesEditor.apply();
 
             new AlertDialog.Builder(this)
                     .setTitle("Рівень пройдено!")
@@ -142,7 +149,6 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
                     })
                     .show();
         } else {
-
             levelsButtonOnClick(null);
         }
     }
@@ -154,10 +160,10 @@ public class PlayLevelActivity extends AppCompatActivity implements LevelModelFr
         View toastLayout = inflater.inflate(R.layout.wrong_toast,
                 (ViewGroup) findViewById(R.id.toast_root_view));
 
-        TextView header = (TextView) toastLayout.findViewById(R.id.toast_header);
+        TextView header = toastLayout.findViewById(R.id.toast_header);
         header.setText("На жаль не вірно!");
 
-        TextView body = (TextView) toastLayout.findViewById(R.id.toast_body);
+        TextView body = toastLayout.findViewById(R.id.toast_body);
         body.setText(wrongText[new Random().nextInt(wrongText.length)]);
 
         userInputEditText.setText("");

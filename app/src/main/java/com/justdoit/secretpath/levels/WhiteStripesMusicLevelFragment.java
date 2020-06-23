@@ -10,16 +10,16 @@ import android.widget.ImageView;
 
 import com.justdoit.secretpath.R;
 
-public class SimpleMusicLevelFragment  extends LevelModelFragment{
+public class WhiteStripesMusicLevelFragment extends LevelModelFragment{
 
     private ImageView imageView;
 
     private static final String LOG_TAG =
-            SimpleMusicLevelFragment.class.getSimpleName();
+            WhiteStripesMusicLevelFragment.class.getSimpleName();
 
 
-    public SimpleMusicLevelFragment() {
-        String[] hints = {"Лблю я nations, навіть якщо їх seven", "Щось white та stripped"};
+    public WhiteStripesMusicLevelFragment() {
+        String[] hints = {"Люблю я nations, навіть якщо їх seven", "Щось white та stripped"};
 
         this.levelDetails = new LevelDetails(
                 7,

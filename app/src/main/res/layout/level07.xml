@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
-    tools:context=".levels.SimpleMusicLevelFragment">
+    tools:context=".levels.WhiteStripesMusicLevelFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +18,7 @@
             android:layout_width="277dp"
             android:layout_height="251dp"
             android:foregroundGravity="center_vertical|center"
-            android:tint="?android:textColorPrimary"
+            android:tint="?android:textColorSecondary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

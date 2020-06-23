@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    tools:context=".levels.WhereAreYouLevelFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="502dp"
+        android:background="@android:color/transparent">
+
+
+        <TextView
+            android:id="@+id/whereAmItext"
+            android:layout_width="181dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="284dp"
+            android:gravity="center"
+            android:text="@string/level10_MainTextQuestion"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="30sp"
+            app:fontFamily="@font/fira_mono_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="127dp"
+            android:layout_height="70dp"
+            android:gravity="center"
+            android:rotation="270"
+            android:text="@string/level10_1TextQuestion"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="24sp"
+            app:fontFamily="@font/fira_mono_bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/whereAmItext"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.277" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="117dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="120dp"
+            android:gravity="center"
+            android:rotation="90"
+            android:text="@string/level10_2TextQuestion"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="24sp"
+            app:fontFamily="@font/fira_mono_bold"
+            app:layout_constraintStart_toEndOf="@+id/whereAmItext"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="181dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/level10_3TextQuestion"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="24sp"
+            app:fontFamily="@font/fira_mono_bold"
+            app:layout_constraintBottom_toTopOf="@+id/whereAmItext"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="181dp"
+            android:layout_height="90dp"
+            android:gravity="center"
+            android:text="@string/level10_4TextQuestion"
+            android:textColor="?android:textColorSecondary"
+            android:textSize="24sp"
+            app:fontFamily="@font/fira_mono_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/whereAmItext" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

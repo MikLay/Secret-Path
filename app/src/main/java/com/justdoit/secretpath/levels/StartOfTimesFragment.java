@@ -13,7 +13,7 @@ public class StartOfTimesFragment extends LevelModelFragment {
 
     public StartOfTimesFragment() {
         String[] hints = {"Подумай про початок в обчислювальній техніці", "Рік, що вважається початком відліку часу в комп'ютерах"};
-        levelDetails = new LevelDetails(3, "Попрограмуємо?", hints);
+        levelDetails = new LevelDetails(2, "Попрограмуємо?", hints);
     }
 
 

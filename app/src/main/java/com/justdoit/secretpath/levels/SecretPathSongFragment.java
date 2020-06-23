@@ -13,7 +13,7 @@ public class SecretPathSongFragment extends LevelModelFragment {
 
     public SecretPathSongFragment() {
         String[] hints = {"Послухай музику та відпочинь", "Знаєш музичний альбом 'Secret Path'?"};
-        levelDetails = new LevelDetails(5, "Меломанія SP", hints);
+        levelDetails = new LevelDetails(4, "Меломанія SP", hints);
     }
 
     @Override
