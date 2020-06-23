@@ -24,7 +24,7 @@ public class WifiLevelFragment extends LevelModelFragment {
     public WifiLevelFragment() {
         final String[] hints = {"Забудь про мережу назавжди", "А що вимикають перед взльотом?"};
         levelDetails = new LevelDetails(
-                2,
+                3,
                 "Вжжж...",
                 hints);
     }
@@ -72,6 +72,7 @@ public class WifiLevelFragment extends LevelModelFragment {
         @Override
         public void onReceive(Context context, Intent intent) {
             final String action = intent.getAction();
+            System.out.println(action);
             if (action != null && action.equals(WifiManager.WIFI_STATE_CHANGED_ACTION)) {
                 if (intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE, WifiManager.WIFI_STATE_UNKNOWN) == WifiManager.WIFI_STATE_DISABLED) {
                     Log.d(LOG_TAG, "Wifi is disabled!");

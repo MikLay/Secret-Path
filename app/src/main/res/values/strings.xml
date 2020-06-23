@@ -43,4 +43,11 @@
     <string name="level04TextQuestion">Нерівна рівність володіє нами</string>
     <string name="level05TextQuestion">Прислухайся та скажи мій порядковий номер</string>
     <string name="level06TextQuestion">Темрява не дозволяє побачити вихід</string>
+    <string name="level08TextQuestion">Му Мууу Мууу Му\nМуу Муу Муу\nМу Муу Муу\nМу\nМу Муу Му</string>
+    <string name="level09TextQuestion">Oj, ghjqnb wtq hsdtym gjnhs,yj ghjcnj yfgbcfnb dslgjdslm\n От чорт, знову...</string>
+    <string name="level10_1TextQuestion">62.47128 6.15995</string>
+    <string name="level10_2TextQuestion">62.47142 6.16458</string>
+    <string name="level10_3TextQuestion">62.47187 6.16181</string>
+    <string name="level10_4TextQuestion">62.47078 6.16207</string>
+    <string name="level10_MainTextQuestion">Що ж мені тут зроблять?</string>
 </resources>

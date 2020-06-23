@@ -1,6 +1,5 @@
 package com.justdoit.secretpath.levels;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -9,15 +8,13 @@ import android.view.ViewGroup;
 
 import com.justdoit.secretpath.R;
 
-import static android.content.Context.MODE_PRIVATE;
-
 public class DarkThemeFragment extends LevelModelFragment {
     private static final String LOG_TAG = DarkThemeFragment.class.getSimpleName();
 
     public DarkThemeFragment() {
         levelDetails = new LevelDetails(
                 6,
-                "Темрява",
+                "Темно - страшно?",
                 new String[]{"Увімкни день", "Зроби все довкола світлішим"});
     }
 
